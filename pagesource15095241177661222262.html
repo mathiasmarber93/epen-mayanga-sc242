@@ -1,0 +1,1299 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html lang="es" class=""&gt;<br/>
+ &lt;head&gt;<br/>
+  &lt;meta charset="utf-8"&gt;<br/>
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br/>
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;&lt;!-- CSRF Token --&gt;<br/>
+  &lt;meta name="csrf-token" content="e2uBFanG308U9qlUhcCfEGGrLcnC1FR9zOfYdl8Y"&gt;<br/>
+  &lt;title&gt;EPEN&lt;/title&gt;<br/>
+  &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css"&gt;<br/>
+  &lt;script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;link rel="stylesheet" href="https://testing.inei.gob.pe/QA/epen/public/js/fancybox/jquery.fancybox.css?v=2.1.7" type="text/css" media="screen"&gt;&lt;!-- Styles --&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/bootstrap.min.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/font-awesome.min.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/smartadmin-production.min.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/app.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/your_style.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/sweetalert.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/js/sumoselect.min.css" rel="stylesheet"&gt;&lt;!-- FAVICONS --&gt;<br/>
+  &lt;link rel="shortcut icon" href="https://testing.inei.gob.pe/QA/epen/public/img/icono.ico" type="image/x-icon"&gt;<br/>
+  &lt;link rel="icon" href="https://testing.inei.gob.pe/QA/epen/public/img/icono.ico" type="image/x-icon"&gt;&lt;!-- GOOGLE FONT --&gt;<br/>
+  &lt;link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oswald:400italic,700"&gt;<br/>
+  &lt;link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700"&gt;<br/>
+  &lt;link href="https://fonts.googleapis.com/css?family=Viga&amp;display=swap" rel="stylesheet"&gt;<br/>
+  &lt;link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"&gt;<br/>
+  &lt;link rel="stylesheet" type="text/css" media="screen" href="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/css/buttons.dataTables.min.css"&gt;<br/>
+  &lt;link rel="stylesheet" href="https://testing.inei.gob.pe/QA/epen/public/js/plugin/jAlert4.0/src/jAlert.css"&gt;<br/>
+  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet"&gt;<br/>
+  &lt;script type="text/javascript"&gt;<br/>
+        window.APP_URL = 'https://testing.inei.gob.pe/QA/epen/public/';<br/>
+        window.SERVICE_URL = 'https://testing.inei.gob.pe/QA/epen/public/personal/services';<br/>
+<br/>
+<br/>
+    &lt;/script&gt;<br/>
+  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"&gt;<br/>
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"&gt;<br/>
+  &lt;script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"&gt;&lt;/script&gt;&lt;!--&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/&gt;--&gt;<br/>
+  &lt;script src="//widget.time.is/?Lima_z14d&amp;t=1695935969236"&gt;&lt;/script&gt;<br/>
+  &lt;style type="text/css"&gt;.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}&lt;/style&gt;<br/>
+  &lt;style type="text/css"&gt;.fancybox-margin{margin-right:17px;}&lt;/style&gt;<br/>
+ &lt;/head&gt;<br/>
+ &lt;body class="fixed-navigation fixed-header smart-style pace-running desktop-detected pace-running"&gt;<br/>
+  &lt;div class="pace pace-active"&gt;<br/>
+   &lt;div class="pace-progress" data-progress-text="77%" data-progress="77" style="transform: translate3d(-22.9782%, 0px, 0px);"&gt;<br/>
+    &lt;div class="pace-progress-inner"&gt;&lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="pace-activity"&gt;&lt;/div&gt;<br/>
+  &lt;/div&gt;<br/>
+  &lt;header id="header" class="text-center"&gt;<br/>
+   &lt;div id="logo-group" class="hidden-mobile visible-tablet"&gt;&lt;/div&gt;<br/>
+   &lt;div class="pull-left"&gt;<br/>
+    &lt;div class="nav navbar-nav navbar-right no-mobile"&gt;<br/>
+     &lt;div id="hide-menu" class="btn-header pull-right"&gt;&lt;span&gt; &lt;a href="javascript:void(0);" data-action="toggleMenu" title="Menu"&gt;&lt;i class="fa fa-reorder"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/span&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="pull-left"&gt;<br/>
+    &lt;div class="nav navbar-nav navbar-right no-mobile"&gt;<br/>
+     &lt;div id="hide-menu" class="btn-header pull-right"&gt;&lt;span&gt;&nbsp;&nbsp; &lt;a href="https://testing.inei.gob.pe/QA/epen/public/panel" title="Inicio"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/span&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;ul class="nav navbar-nav navbar-right no-mobile"&gt;<br/>
+    &lt;li&gt;&lt;span&gt; &lt;!-- User image size is adjusted inside CSS, it should stay as it --&gt; &lt;a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"&gt; &lt;span data-toggle="tooltip" data-placement="bottom" title="Cerrar Sesión" style="color: white;"&gt; &lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/avatars/male.png" alt="me" class="online" data-toggle="tooltip" data-placement="bottom" title="Cerrar Sesión"&gt; QA - Control de Calidad&lt;/span&gt; &lt;/a&gt; &lt;/span&gt;&lt;/li&gt;<br/>
+   &lt;/ul&gt;<br/>
+   &lt;ul class="nav navbar-nav navbar-right no-mobile"&gt;<br/>
+    &lt;li&gt;&lt;a href="https://time.is/Lima" id="time_is_link" rel="nofollow"&gt; &lt;span id="Lima_z14d" style="font-size:12px;color:white"&gt;&lt;span onclick="window.location='https://time.is/calendar'" title="https://time.is/calendar"&gt;Jueves 28/09/23&lt;/span&gt; &lt;span onclick="location='https://time.is/'" title="https://time.is/"&gt;16:19:46&lt;/span&gt;&lt;/span&gt; &lt;script src="//widget.time.is/es.js"&gt;&lt;/script&gt;&lt;script&gt;<br/>
+                    time_is_widget.init({<br/>
+                        Lima_z14d: {<br/>
+                            template: "DATE TIME",<br/>
+                            date_format: "dayname daynum/monthnum/yy"<br/>
+                        }<br/>
+                    });<br/>
+                &lt;/script&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+   &lt;/ul&gt;<br/>
+   &lt;div class="pull-left"&gt;<br/>
+    &lt;div class="nav navbar-nav navbar-right mobile"&gt;<br/>
+     &lt;div class="btn btn-primary btn pull-left"&gt;&lt;span&gt;&lt;a href="javascript:void(0);" data-action="toggleMenu" title="Menu"&gt;&lt;i class="fa fa-reorder"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/span&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="pull-right"&gt;<br/>
+    &lt;div class="nav navbar-nav navbar-right mobile"&gt;<br/>
+     &lt;div class="btn btn-primary pull-right"&gt;&lt;span&gt;&lt;a href="https://testing.inei.gob.pe/QA/epen/public/panel" style="color: white;" title="Inicio"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/span&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;h1 class="titulo hidden-tablet"&gt;&lt;a href="https://testing.inei.gob.pe/QA/epen/public/panel" class="txt-color-white" style="font-family: 'Helvetica Neue', Roboto, 'Segoe UI', Calibri, sans-serif;"&gt;ENCUESTA PERMANENTE DE EMPLEO NACIONAL - SISTEMA DE MONITOREO Y SEGUIMIENTO DE PROCESOS&lt;/a&gt;&lt;/h1&gt;<br/>
+   &lt;h5 class="titulito txt-color-white mobile"&gt;ENCUESTA PERMANENTE DE EMPLEO NACIONAL - SISTEMA DE MONITOREO Y SEGUIMIENTO DE PROCESOS&lt;/h5&gt;<br/>
+  &lt;/header&gt;<br/>
+  &lt;aside id="left-panel"&gt;<br/>
+   &lt;div&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/logo_inei.png" class="img-responsive" style="margin: 0 auto; padding-top:2em; width:79%; filter:brightness(1); "&gt; &lt;!--img src="{ { asset('img/logo_v_cenec_blanco.png')}}" class="img-responsive" style="margin: 0 auto; width:90%; padding-top: 3em; ;padding-bottom: 0.5em; padding-right: 1em"--&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="login-info"&gt;&lt;span&gt; &lt;!-- User image size is adjusted inside CSS, it should stay as it --&gt; &lt;a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="Cerrar Sesión"&gt; &lt;span style="color: #fff;"&gt; &lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/avatars/male.png" alt="me" class="online" data-toggle="tooltip" data-placement="bottom" title="Cerrar Sesión"&gt;QA - Control de Calidad&lt;/span&gt; &lt;/a&gt; &lt;/span&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="imagen-lado"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/sidebar-5.png" style="position:relative; opacity: 0.4; filter:brightness(0.8);"&gt; &lt;!--img src="{ { asset('img/logo_inei.png')}}" class="img-responsive" style="margin: 0 auto; left: 40%;  width:50%; position:absolute;  top: 78%; filter:brightness(0.9);"--&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;nav class="scroll-style"&gt;<br/>
+    &lt;ul class="admin__menu scroll-style"&gt;<br/>
+     &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=6"&gt;&lt;i style="color:#ffffff !important;font-weight: bold !important" class="fa-fw glyphicon glyphicon-tasks"&gt;&lt;/i&gt; &lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-item-parent"&gt;MÓDULO DOCUMENTOS METODOLÓGICOS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+      &lt;ul&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="javascript:;?menu_id_est=274"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;1.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;PRUEBA PILOTO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/piloto/plan_de_trabajo?menu_id_est=12"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;1.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PLAN DE TRABAJO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/piloto/cuestionarios?menu_id_est=183"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;1.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CUESTIONARIO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/piloto/manuales_operativos?menu_id_est=263"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;1.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;MANUALES OPERATIVOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="javascript:;?menu_id_est=242"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;2.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;ACTUALIZACIÓN CARTOGRÁFICA Y REGISTRO DE VIVIENDAS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/cartografica/cuestionarios?menu_id_est=328"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;FORMATO DE REGISTRO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/cartografica/manuales_operativos?menu_id_est=329"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;MANUALES OPERATIVOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/cartografica/directivas_e_instructivo?menu_id_est=3725"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;DIRECTIVAS E INSTRUCTIVOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/cartografica/carta_de_presentacion?menu_id_est=3726"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CARTA DE PRESENTACIÓN&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="javascript:;?menu_id_est=11"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;3.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;ENCUESTA EPEN&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/encuesta/cuestionarios?menu_id_est=179"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CUESTIONARIOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/encuesta/manuales_operativos?menu_id_est=264"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;MANUALES OPERATIVOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/encuesta/directivas_e_instructivos?menu_id_est=3727"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;DIRECTIVAS E INSTRUCTIVOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/encuesta/carta_de_presentacion?menu_id_est=3728"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CARTA DE PRESENTACIÓN&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="javascript:;?menu_id_est=445"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;4.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;DOCUMENTOS DE GESTIÓN&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/docgestion/ficha_tecnica?menu_id_est=3720"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;FICHA TÉCNICA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/docgestion/diptico_de_poliza_de_seguro_y_formatos_de_gestion?menu_id_est=3721"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;DIPTICO DE PÓLIZA DE SEGURO Y FORMATOS DE GESTIÓN&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/docgestion/formato_de_robo_y_rajadura_de_tablet_y_equipos?menu_id_est=3722"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;FORMATO DE ROBO Y RAJADURA DE TABLET Y EQUIPOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/docgestion/protocolo_de_bioseguridad?menu_id_est=3723"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PROTOCOLO DE BIOSEGURIDAD&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/docgestion/pasos_a_seguir_sospechoso_de_covid?menu_id_est=3724"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PASOS A SEGUIR SOSPECHOSO DE COVID&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="javascript:;?menu_id_est=1667"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;5.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;REENTREVISTA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/muestreo/cuestionarios?menu_id_est=1668"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;5.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CUESTIONARIOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/muestreo/manuales_operativos?menu_id_est=1669"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;5.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;MANUALES OPERATIVOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/muestreo/directivas_e_instructivos?menu_id_est=3719"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;5.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;DIRECTIVAS E INSTRUCTIVOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/cargar_documentos?menu_id_est=225"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;6.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;INGRESO DE DOCUMENTOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+      &lt;/ul&gt;&lt;/li&gt;<br/>
+     &lt;li class=""&gt;&lt;a style="color:#93faf4 !important;font-weight: bold !important" href="javascript:;?menu_id_est=372"&gt;&lt;i style="color:#93faf4 !important;font-weight: bold !important" class="fa-fw glyphicon glyphicon-signal"&gt;&lt;/i&gt; &lt;span style="color:#93faf4 !important;font-weight:bold !important" class="menu-item-parent"&gt;MÓDULO CAPACITACIÓN&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+      &lt;ul&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=544"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;ADMINISTRADOR CAPACITACION&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=547"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;AÑO 2021&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=548"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;AÑO 2022&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=549"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACIÓN - CARTOGRAFICA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=552"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.1.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;EVALUACIONES&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=668"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.1.12.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACION XVIII&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/reporte_evaluacion_67?menu_id_est=669"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.1.12.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/reporte_notas_67?menu_id_est=670"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.1.12.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE NOTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=550"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACIÓN - ENCUESTA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=551"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;EVALUACIONES&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=663"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.19.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACION XVII&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_notas_59?menu_id_est=664"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.19.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE NOTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=570"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACIÓN DE MONITOREO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=573"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;ANALISTAS DE CONTROL DE CALIDAD&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="javascript:;?menu_id_est=2675"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;4.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;AÑO 2023&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=2676"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACIÓN - CARTOGRAFICA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/capacitacion/validacion?menu_id_est=2679"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=2680"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACION I&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/reporte_evaluacion_74?menu_id_est=2682"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.2.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/reporte_notas_74?menu_id_est=2683"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.2.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE NOTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=3679"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACION II&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/reporte_evaluacion_76?menu_id_est=3680"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.3.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/reporte_notas_76?menu_id_est=3681"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.3.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE NOTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=3683"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACION III&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/reporte_evaluacion_78?menu_id_est=3684"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.4.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/reporte_notas_78?menu_id_est=3685"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.4.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE NOTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#c1fedb !important;font-weight: bold !important" href="javascript:;?menu_id_est=2677"&gt;&lt;span style="color:#c1fedb !important; font-weight:bold !important" class="menu-indice"&gt;4.2.&lt;/span&gt;&lt;span style="color:#c1fedb !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACIÓN - ENCUESTA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/capacitacion/encuesta/validacion?menu_id_est=2678"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.2.1.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="javascript:;?menu_id_est=2681"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.2.2.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACION I&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_evaluacion_75?menu_id_est=2684"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.2.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_notas_75?menu_id_est=2685"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.2.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE NOTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="javascript:;?menu_id_est=3673"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.2.3.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACION II&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_evaluacion_77?menu_id_est=3674"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.3.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_notas_77?menu_id_est=3675"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.3.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE NOTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="javascript:;?menu_id_est=3676"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.2.4.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACION III&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_evaluacion_79?menu_id_est=3677"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.4.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_notas_79?menu_id_est=3678"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.4.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE NOTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="javascript:;?menu_id_est=3686"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.2.5.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACION IV&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_evaluacion_80?menu_id_est=3687"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.5.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_notas_80?menu_id_est=3688"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.5.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE NOTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="javascript:;?menu_id_est=3712"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.2.9.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;CAPACITACION VIII&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_evaluacion_88?menu_id_est=3713"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.9.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE EVALUACIONES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_notas_88?menu_id_est=3714"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.9.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE NOTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;&lt;/li&gt;<br/>
+      &lt;/ul&gt;&lt;/li&gt;<br/>
+     &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=286"&gt;&lt;i style="color:#ffffff !important;font-weight: bold !important" class="fa-fw glyphicon glyphicon-folder-close"&gt;&lt;/i&gt; &lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-item-parent"&gt;MÓDULO RESUMEN EJECUTIVO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+      &lt;ul&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/resumen_ejecutivo_carto?menu_id_est=243"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;ACTUALIZACIÓN CARTOGRÁFICA Y REGISTRO DE VIVIENDAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/resumen_ejecutivo_encuesta?menu_id_est=249"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;ENCUESTA ENAMEL&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/resumen_ejecutivo_reentrevista?menu_id_est=3731"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;3.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;REENTREVISTA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+      &lt;/ul&gt;&lt;/li&gt;<br/>
+     &lt;li class=""&gt;&lt;a style="color:#93faf4 !important;font-weight: bold !important" href="javascript:;?menu_id_est=2672"&gt;&lt;i style="color:#93faf4 !important;font-weight: bold !important" class="fa-fw glyphicon glyphicon-signal"&gt;&lt;/i&gt; &lt;span style="color:#93faf4 !important;font-weight:bold !important" class="menu-item-parent"&gt;MÓDULO OPERATIVO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+      &lt;ul&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="javascript:;?menu_id_est=269"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;2.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;MÓDULO ACTUALIZACIÓN CARTOGRAFICA Y REGISTRO DE VIVIENDAS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=275"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;DOCUMENTOS OPERATIVOS Y APLICATIVO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/actualizacion_cartografica/programacion_rutas?menu_id_est=256"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.1.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PROGRAMACIÓN DE RUTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/actualizacion_cartografica/legajos_campo?menu_id_est=288"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.1.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;LEGAJOS DE CAMPO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/actualizacion_cartografica/plan_recorrido?menu_id_est=281"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.1.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PLAN DE RECORRIDO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/actualizacion_cartografica/marco_campo?menu_id_est=306"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.1.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;MARCOS DE CAMPO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/actualizacion_cartografica/aplicativo?menu_id_est=307"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.1.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;APLICATIVO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion/ingreso_documentos_cartograficos?menu_id_est=475"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.1.6.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;DOCUMENTOS CARTOGRÁFICOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=212"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE PERSONAL DE CAMPO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/seguimiento_transferencia?menu_id_est=308"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE TRANSFERENCIA DE INFORMACIÓN&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/carto_georeferenciacion?menu_id_est=270"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;GEORREFERENCIACIÓN DE VIVIENDAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/geolocalizacion?menu_id_est=382"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;GEOLOCALIZACIÓN DEL PERSONAL DE CAMPO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/georreferenciacion_espacial_cartografica_vivienda_fuera_conglomerado?menu_id_est=530"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;GEORREFERENCIACION ESPACIAL - REGISTROS FUERA DEL CONGLOMERADO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=623"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INCIDENCIAS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/incidencias/ingreso/carto?menu_id_est=624"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.5.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INGRESO DE INCIDENCIAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/incidencias/reporte/carto?menu_id_est=625"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.5.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE INCIDENCIAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=666"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.6.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE PEA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/seguimiento_pea_carto?menu_id_est=671"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.6.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DIARIO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/seguimiento_supervision_carto?menu_id_est=672"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.6.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE SUPERVISIÓN&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/seguimiento_personal/ingreso_informe_jefe_brigada?menu_id_est=673"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.2.6.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INFORMES TÉCNICOS DE COORDINADORES Y JEFES DE BRIGADA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=271"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CONSISTENCIA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/consistencia_cobertura?menu_id_est=373"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.3.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CONSISTENCIA DE COBERTURA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/consistencia_basica?menu_id_est=374"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.3.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CONSISTENCIA BÁSICA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/consistencia_cartografica?menu_id_est=383"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.3.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CONSISTENCIA CARTOGRÁFICA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=272"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INDICADORES DE COBERTURA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=273"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;ACTUALIZACIÓN CARTOGRÁFICA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/actualizacion_cartografica?menu_id_est=277"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.1.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PORCENTAJE DE MANZANAS PROGRAMADAS Y RESULTANTES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/actualizacion_cartografica_consulta?menu_id_est=3672"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.1.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CONSULTA DEL DETALLE DE MANZANA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=334"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REGISTRO DE VIVIENDAS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_comparar_cobertura_2023_cpv?menu_id_est=2686"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.2.7.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;COMPARACION CPV2017 VS ENAMEL 2023 - AMBITO URBANO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_comparar_cobertura_rural_2023_cpv?menu_id_est=2687"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.2.8.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;COMPARACION CPV2017 VS ENAMEL 2023 - AMBITO RURAL&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=451"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;COBERTURA DE PRODUCCIÓN&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/indicadores_cobertura/cobertura_conglomerado_manzanas_centropoblados?menu_id_est=452"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.3.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;COBERTURA A NIVEL DE CONGLOMERADOS, MANZANAS Y CENTROS POBLADOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/cobertura_conglomerado_resultado_consistencia?menu_id_est=3706"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.4.3.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;COBERTURA A NIVEL DE CONGLOMERADOS POR RESULTADO, SEGÚN CONSISTENCIA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#c1fedb !important;font-weight: bold !important" href="javascript:;?menu_id_est=294"&gt;&lt;span style="color:#c1fedb !important; font-weight:bold !important" class="menu-indice"&gt;2.5.&lt;/span&gt;&lt;span style="color:#c1fedb !important;font-weight:bold !important" class="menu-titulo"&gt;INDICADORES DE CALIDAD&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_1?menu_id_est=338"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PORCENTAJE DE REGISTROS POR TIPO DE USO DEL LOCAL&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=339"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PORCENTAJE DE VIVIENDA POR CONDICIÓN DE OCUPACIÓN&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_2?menu_id_est=661"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.2.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PORCENTAJE DE VIVIENDA POR CONDICIÓN DE OCUPACIÓN&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_2_otro?menu_id_est=662"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.2.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PORCENTAJE DE VIVIENDA POR CONDICIÓN DE OCUPACIÓN - OTRA CAUSA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_2_comparativo?menu_id_est=665"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.2.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;COMPARATIVO ENAMEL 2021 Y 2022 POR CONDICIÓN DE OCUPACIÓN&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_3?menu_id_est=340"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PORCENTAJE DE VIVIENDAS, SEGÚN CANTIDAD DE OCUPANTES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_4?menu_id_est=341"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PORCENTAJE DE VIVIENDAS, SEGÚN CANTIDAD DE OCUPANTES DE 14 AÑOS Y MAS DE EDAD&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_5?menu_id_est=342"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PORCENTAJE DE VIVIENDAS, SEGÚN CANTIDAD DE OCUPANTES DE NACIONALIDAD VENEZOLANA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_7?menu_id_est=667"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.7.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PORCENTAJE DE REGISTROS POR TIPO DE INFORMACIÓN&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_9?menu_id_est=323"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.9.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CANTIDAD DE REGISTROS POR REGISTRADOR/A AL DIA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/cantidad_transferencia_x_dia?menu_id_est=3730"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.10.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CANTIDAD DE TRANSFERENCIAS POR REGISTRADOR AL DIA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_11?menu_id_est=3737"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.5.11.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE PRODUCCIÓN POR REGISTRADOR POR DÍA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=324"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.6.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;EVALUACIÓN DE LA MUESTRA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/actualizacion_cartografica_muestreo?menu_id_est=376"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.6.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;ACTUALIZACIÓN CARTOGRAFICA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/cobertura_registro?menu_id_est=375"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.6.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;COBERTURA DEL REGISTRO DE VIVIENDAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=531"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.7.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INDICADORES MENSUALES&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_mensual_viv_particulares?menu_id_est=532"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.7.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;VIVIENDAS PARTICULARES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_mensual_viv_ocupadas?menu_id_est=533"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.7.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;VIVIENDAS OCUPADAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_mensual_viv_desocupadas?menu_id_est=535"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.7.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;VIVIENDAS DESOCUPADAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_mensual_viv_particulares_ocupacion?menu_id_est=593"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.7.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;VIVIENDAS PARTICULARES POR CONDICIÓN DE OCUPACIÓN&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_mensual_viv_telefono?menu_id_est=536"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.7.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;VIVIENDAS CON INFORMACIÓN DE TELÉFONO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_mensual_viv_venezolana?menu_id_est=537"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.7.6.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;VIVIENDAS CON POBLACIÓN VENEZOLANA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_mensual_viv_mayor_edad?menu_id_est=538"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.7.7.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;VIVIENDAS CON POBLACION DE 14 AÑOS A MAS DE EDAD&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_mensual_viv_resultado_final?menu_id_est=539"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.7.8.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;VIVIENDAS CON RESULTADO FINAL&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_mensual_viv_ocupada_resultado_final?menu_id_est=540"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;2.7.9.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;VIVIENDAS OCUPADAS POR RESULTADO FINAL&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="javascript:;?menu_id_est=325"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;3.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;MÓDULO ENCUESTA ENAMEL&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#c1fedb !important;font-weight: bold !important" href="javascript:;?menu_id_est=315"&gt;&lt;span style="color:#c1fedb !important; font-weight:bold !important" class="menu-indice"&gt;3.1.&lt;/span&gt;&lt;span style="color:#c1fedb !important;font-weight:bold !important" class="menu-titulo"&gt;DOCUMENTOS OPERATIVOS Y APLICATIVO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/encuesta/programacion_rutas?menu_id_est=291"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.1.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PROGRAMACIÓN DE RUTAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/encuesta/legajos_campo?menu_id_est=343"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.1.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;LEGAJOS DE CAMPO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/encuesta/plan_recorrido?menu_id_est=344"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.1.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PLAN DE RECORRIDO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/encuesta/marco_campo?menu_id_est=378"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.1.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;MARCOS DE CAMPO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/encuesta/aplicativo?menu_id_est=379"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.1.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;APLICATIVO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/encuesta/marco_funcionarios?menu_id_est=3717"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;3.1.6.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;MARCO DE FUNCIONARIOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/documentacion_operativa_aplicativo/encuesta/plan_recorrido_resumen?menu_id_est=3729"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;3.1.8.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;RESUMEN DE REGISTRO DEL PLAN DE RECORRIDO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=348"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE PERSONAL DE CAMPO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=432"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INCIDENCIAS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/incidencias/reporte_operativo?menu_id_est=3734"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.5.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INCIDENCIAS OPERATIVAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/incidencias/reporte_personal?menu_id_est=3735"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.5.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INCIDENCIAS PERSONALES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/incidencias/reporte_tablet?menu_id_est=3736"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.5.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INCIDENCIAS EQUIPO TABLET&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=649"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.8.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE LA PEA – AREA DE MONITOREO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/seguimiento_pea?menu_id_est=650"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.8.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO POR PERIODO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/seguimiento_supervision?menu_id_est=655"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.8.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE SUPERVISIÓN&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/seguimiento_indicadores?menu_id_est=659"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.8.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE INDICADORES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=3710"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.9.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE VISITAS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/visita_conglomerado?menu_id_est=3711"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.2.9.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE VISITAS DE CONGLOMERADO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/geolocalizacion_supervisores?menu_id_est=3716"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;3.2.10.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;GEOLOCALIZACIÓN DEL PERSONAL - SUPERVISORES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=353"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INDICADORES DE COBERTURA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#c1fedb !important;font-weight: bold !important" href="javascript:;?menu_id_est=356"&gt;&lt;span style="color:#c1fedb !important; font-weight:bold !important" class="menu-indice"&gt;3.3.3.&lt;/span&gt;&lt;span style="color:#c1fedb !important;font-weight:bold !important" class="menu-titulo"&gt;COBERTURA DE EMPLEO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/cobertura_encuesta_empleo?menu_id_est=3707"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;3.3.3.6.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;COBERTURA DE EMPLEO (CAO 300)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/cobertura_promedio_visita?menu_id_est=380"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.3.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PROMEDIO DEL NUMERO DE VISITAS POR VIVIENDA Y PERSONA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/promedio_duracion_entrevista?menu_id_est=385"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.3.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PROMEDIO DE DURACIÓN DE ENTREVISTA POR VIVIENDA Y PERSONA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta_viviendas_por_hogares?menu_id_est=387"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.3.6.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;TOTAL DE VIVIENDAS POR CANTIDAD DE HOGARES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=362"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INDICADORES DE CALIDAD&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=363"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.4.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;PORCENTAJE DE RESIDENTE HABITUALES DE 14 AÑOS A MÁS DE EDAD&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_x_tipo_entrevista?menu_id_est=434"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.4.1.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;POR TIPO DE ENTREVISTA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_x_edad?menu_id_est=364"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.4.1.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;POR GRUPOS DE EDAD&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_x_genero?menu_id_est=365"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.4.1.3.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;POR SEXO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_x_nivel?menu_id_est=366"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.4.1.4.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;POR NIVEL EDUCATIVO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/indicador_calidad_x_area_residencia?menu_id_est=435"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.4.1.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;POR ÁREA DE RESIDENCIA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=350"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INDICADORES DEMOGRAFICOS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=407"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.6.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;CONSITENCIA BÁSICA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=408"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.6.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;COBERTURA Y ESTRUCTURA DE VIVIENDAS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_visitas_consistencia?menu_id_est=3733"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;3.6.1.21.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE VISITAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;&lt;/li&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="javascript:;?menu_id_est=2667"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;4.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;MÓDULO REENTREVISTA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+        &lt;ul&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#c1fedb !important;font-weight: bold !important" href="javascript:;?menu_id_est=3690"&gt;&lt;span style="color:#c1fedb !important; font-weight:bold !important" class="menu-indice"&gt;4.1.&lt;/span&gt;&lt;span style="color:#c1fedb !important;font-weight:bold !important" class="menu-titulo"&gt;DOCUMENTOS OPERATIVOS Y APLICATIVO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/seguimiento_personal/ingreso_informe_analista_calidad?menu_id_est=3732"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.1.6.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INFORMES DE ACC&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#c1fedb !important;font-weight: bold !important" href="javascript:;?menu_id_est=2668"&gt;&lt;span style="color:#c1fedb !important; font-weight:bold !important" class="menu-indice"&gt;4.2.&lt;/span&gt;&lt;span style="color:#c1fedb !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE PERSONAL DE CAMPO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="javascript:;?menu_id_est=3696"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.2.1.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE TRANSFERENCIA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/ultima_transferencia_reentrevista?menu_id_est=3697"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.1.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;ULTIMA TRANSFERENCIA DE DATOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/seguimiento_transferencia_reentrevista?menu_id_est=3698"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.1.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE TRANSFERENCIA DE DATOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/georreferenciacion_reentrevista?menu_id_est=3699"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.2.2.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;GEORREFERENCIACIÓN DE VIVIENDAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/indicador_muestreo/geolocalizacion_encuesta_reentrevsita?menu_id_est=3700"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.2.3.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;GEOLOCALIZACIÓN DEL PERSONAL&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="javascript:;?menu_id_est=3701"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.2.4.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE VISITAS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/seguimiento_visitas_periodo_reentrevista?menu_id_est=3703"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.4.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE VISITAS POR PERIODO&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/reporte_visitas_reentrevista?menu_id_est=3702"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.4.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE VISITAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=2669"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.5.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INCIDENCIAS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/incidencias/ingreso/muestreo?menu_id_est=2670"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.5.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INGRESO DE INCIDENCIAS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=2671"&gt;&lt;i style="color:#ffffff !important;font-weight: bold !important" class="fa-fw incidencias/reporte/muestreo"&gt;&lt;/i&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.2.5.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;REPORTE DE INCIDENCIAS&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+              &lt;ul&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;li class=""&gt;&lt;a style="color:#c1fedb !important;font-weight: bold !important" href="javascript:;?menu_id_est=3691"&gt;&lt;span style="color:#c1fedb !important; font-weight:bold !important" class="menu-indice"&gt;4.3.&lt;/span&gt;&lt;span style="color:#c1fedb !important;font-weight:bold !important" class="menu-titulo"&gt;INDICADORES DE COBERTURA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+          &lt;ul&gt;<br/>
+           &lt;li class=""&gt;&lt;a style="color:#b7e1fa !important;font-weight: bold !important" href="javascript:;?menu_id_est=3692"&gt;&lt;span style="color:#b7e1fa !important; font-weight:bold !important" class="menu-indice"&gt;4.3.1.&lt;/span&gt;&lt;span style="color:#b7e1fa !important;font-weight:bold !important" class="menu-titulo"&gt;COBERTURA DE LA REENTREVISTA&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+            &lt;ul&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/indicadores_basico_campo_reentrevista?menu_id_est=3693"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.3.1.1.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;INDICADORES BÁSICOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+             &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/cobertura_reentrevista?menu_id_est=3694"&gt;&lt;span style="color:#ffffff !important; font-weight:bold !important" class="menu-indice"&gt;4.3.1.2.&lt;/span&gt;&lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-titulo"&gt;COBERTURA DE VIVIENDA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+            &lt;/ul&gt;&lt;/li&gt;<br/>
+          &lt;/ul&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;&lt;/li&gt;<br/>
+      &lt;/ul&gt;&lt;/li&gt;<br/>
+     &lt;li class=""&gt;&lt;a style="color:#ffffff !important;font-weight: bold !important" href="javascript:;?menu_id_est=3704"&gt;&lt;i style="color:#ffffff !important;font-weight: bold !important" class="fa-fw glyphicon glyphicon-signal"&gt;&lt;/i&gt; &lt;span style="color:#ffffff !important;font-weight:bold !important" class="menu-item-parent"&gt;NDICADORES DE MUESTREO&lt;/span&gt;&lt;b class="collapse-sign"&gt;&lt;em class="fa fa-plus-square-o"&gt;&lt;/em&gt;&lt;/b&gt;&lt;/a&gt;<br/>
+      &lt;ul&gt;<br/>
+       &lt;li class=""&gt;&lt;a style="color:#b8ef6d !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/encuesta/seguimiento_muestra?menu_id_est=3705"&gt;&lt;span style="color:#b8ef6d !important; font-weight:bold !important" class="menu-indice"&gt;1.&lt;/span&gt;&lt;span style="color:#b8ef6d !important;font-weight:bold !important" class="menu-titulo"&gt;SEGUIMIENTO DE LA MUESTRA&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+      &lt;/ul&gt;&lt;/li&gt;<br/>
+     &lt;li class=""&gt;&lt;a style="color:#93faf4 !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/bienes_institucionales?menu_id_est=3708"&gt;&lt;i style="color:#93faf4 !important;font-weight: bold !important" class="fa-fw glyphicon glyphicon-th-list"&gt;&lt;/i&gt; &lt;span style="color:#93faf4 !important;font-weight:bold !important" class="menu-item-parent"&gt;BIENES INSTITUCIONALES&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+     &lt;li class=""&gt;&lt;a style="color:#93faf4 !important;font-weight: bold !important" href="https://testing.inei.gob.pe/QA/epen/public/monitoreo-gerencial/incidencias?menu_id_est=3709"&gt;&lt;i style="color:#93faf4 !important;font-weight: bold !important" class="fa-fw glyphicon glyphicon-flag"&gt;&lt;/i&gt; &lt;span style="color:#93faf4 !important;font-weight:bold !important" class="menu-item-parent"&gt;REPORTE DE INFORMES OPERATIVOS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>
+    &lt;/ul&gt;<br/>
+   &lt;/nav&gt;<br/>
+  &lt;/aside&gt;<br/>
+  &lt;div id="shortcut"&gt;<br/>
+   &lt;form id="logout-form" action="https://testing.inei.gob.pe/QA/epen/public/logout" method="POST" style="display: none;"&gt;&lt;input type="hidden" name="_token" value="e2uBFanG308U9qlUhcCfEGGrLcnC1FR9zOfYdl8Y"&gt;<br/>
+   &lt;/form&gt;<br/>
+   &lt;ul&gt;<br/>
+    &lt;li&gt;&lt;a href="#" class="jarvismetro-tile selected big-cubes bg-color-redLight" onclick="event.preventDefault();document.getElementById('logout-form').submit();"&gt; &lt;span class="iconbox"&gt; &lt;i class="fa fa-sign-out fa-4x"&gt;&lt;/i&gt; &lt;span&gt;Salir&lt;/span&gt; &lt;/span&gt; &lt;/a&gt;&lt;/li&gt;<br/>
+   &lt;/ul&gt;<br/>
+  &lt;/div&gt;<br/>
+  &lt;div id="main" role="main"&gt;<br/>
+   &lt;div id="content"&gt;<br/>
+    &lt;div class="validacion"&gt;<br/>
+     &lt;div class="col-md-12  col-lg-12"&gt;<br/>
+      &lt;div class="col-md-1  col-lg-1"&gt;&lt;/div&gt;<br/>
+      &lt;div class="col-md-10  col-lg-10"&gt;<br/>
+       &lt;fieldset style="background-color: #ffffff"&gt;<br/>
+        &lt;div class="col-md-12  col-lg-12" style="text-align: center;"&gt;<br/>
+         &lt;div class="col-md-2  col-lg-2"&gt;&lt;!--&lt;img  src="https://testing.inei.gob.pe/QA/epen/public/img/epen_logo.png"  height="80" width="85" style="padding-top: 5px;"&gt;--&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="col-md-8  col-lg-8"&gt;<br/>
+          &lt;h6&gt;Instituto Nacional de Estadística e Informática&lt;/h6&gt;<br/>
+          &lt;h1&gt;ENCUESTA PERMANENTE DE EMPLEO NACIONAL - EPEN 2023&lt;/h1&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="col-md-2  col-lg-2"&gt;<br/>
+          &lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/logoinei.png" height="80" width="120"&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="col-md-12  col-lg-12" style="text-align: center;"&gt;<br/>
+         &lt;h4&gt;CURSO DE CAPACITACIÓN DIRIGIDO A REGISTRADORES/AS &lt;br&gt;<br/>
+          Y SUPERVISORES/AS NACIONLES&lt;/h4&gt;<br/>
+         &lt;h3&gt;SEGUNDA EVALUACIÓN PARCIAL&lt;/h3&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="col-md-12  col-lg-12"&gt;<br/>
+         &lt;div class="row"&gt;<br/>
+          &lt;div class="col-md-12  col-lg-12"&gt;<br/>
+           &lt;div class="card card-default"&gt;<br/>
+            &lt;div class="card-header"&gt;&lt;strong&gt;&lt;u&gt;DATOS POSTULANTE&lt;/u&gt;&lt;/strong&gt;<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="card-body card-5-7"&gt;<br/>
+             &lt;div class="col-md-12  col-lg-11"&gt;<br/>
+              &lt;div class="col-md-12  col-lg-12"&gt;<br/>
+               &lt;div class="col-md-3  col-lg-3"&gt;<br/>
+                &lt;strong&gt;DNI:&lt;/strong&gt;<br/>
+               &lt;/div&gt;<br/>
+               &lt;div class="col-md-9  col-lg-9" style="font-size: 14px;"&gt;<br/>
+                74721561<br/>
+               &lt;/div&gt;<br/>
+              &lt;/div&gt;<br/>
+              &lt;div class="col-md-12  col-lg-12"&gt;<br/>
+               &lt;div class="col-md-3  col-lg-3"&gt;<br/>
+                &lt;strong&gt;Apellidos:&lt;/strong&gt;<br/>
+               &lt;/div&gt;<br/>
+               &lt;div class="col-md-9  col-lg-9" style="font-size: 14px;"&gt;<br/>
+                PRUEBA PRUEBA<br/>
+               &lt;/div&gt;<br/>
+              &lt;/div&gt;<br/>
+              &lt;div class="col-md-12  col-lg-12"&gt;<br/>
+               &lt;div class="col-md-3  col-lg-3"&gt;<br/>
+                &lt;strong&gt;Nombres:&lt;/strong&gt;<br/>
+               &lt;/div&gt;<br/>
+               &lt;div class="col-md-9  col-lg-9" style="font-size: 14px;"&gt;<br/>
+                PRUEBAS<br/>
+               &lt;/div&gt;<br/>
+              &lt;/div&gt;&lt;input type="hidden" name="dni" id="dni" value="74721561"&gt; &lt;input type="hidden" name="nro_exa" id="nro_exa" value="2"&gt; &lt;input type="hidden" name="nivel" id="nivel" value="103"&gt; &lt;input type="hidden" name="user" id="user" value="2"&gt; &lt;input type="hidden" name="nro_cap" id="nro_cap" value="1"&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div id="div_nota" class="col-md-12 col-lg-1" style="display:none;text-align: center;border: solid;border-width: thin;border-color: lightgray;margin: -4px;"&gt;&lt;label&gt;NOTA&lt;/label&gt;&lt;br&gt;&lt;label id="lbl_nota" style="font-size: 34px;font-weight: bold;"&gt;&lt;/label&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/fieldset&gt;&lt;input type="hidden" name="total_secciones" id="total_secciones" value="0"&gt;<br/>
+       &lt;div class="accordion-container" id="seccion01" style="background-color: #ffffff;"&gt;<br/>
+        &lt;div class="row" style="padding: 1em;"&gt;<br/>
+         &lt;table id="nel27" class="table-responsive" width="98%"&gt;<br/>
+          &lt;thead&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/thead&gt;<br/>
+          &lt;tbody&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td width="1%" style="text-align: center; vertical-align: top;font-weight:bold"&gt;1.&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas" style="padding-right: 15px;font-weight:bold"&gt;En la capital distrital, el/la registrador/a mostrará su credencial y la carta de presentación de la encuesta, informará sobre los objetivos del proyecto, donde explicará el motivo de su presencia y el tiempo de permanencia en el distrito. En esta reunión de trabajo, indique lo que no se debe realizar: (1 punto)&lt;br&gt;&lt;br&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="1" name="opcion27" id="opcion27_1" onchange="alt_marcada('opcion27',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(A).&lt;/strong&gt; Verificará la existencia y ubicación de los centros poblados que figuran en los croquis rurales de los conglomerados asignados como carga de trabajo. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="2" name="opcion27" id="opcion27_2" onchange="alt_marcada('opcion27',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(B).&lt;/strong&gt; Verificará el nombre de los centros poblados y de ser el caso corregirlos, preguntar por la ubicación geográfica de cada uno de los centros poblados. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="3" name="opcion27" id="opcion27_3" onchange="alt_marcada('opcion27',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(C).&lt;/strong&gt; Solicitará información sobre el número aproximado de viviendas que tiene cada centro poblado para ser anotados a un lado del nombre del centro poblado. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="4" name="opcion27" id="opcion27_4" onchange="alt_marcada('opcion27',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(D).&lt;/strong&gt; Agradecerá a las autoridades respectivas por la ayuda brindada. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="5" name="opcion27" id="opcion27_5" onchange="alt_marcada('opcion27',this.value)"&gt; &lt;input id="opcion27" type="hidden" value=""&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(E).&lt;/strong&gt; Entregará documentos físicos o digitales a autoridad alguna que lo requiera. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td&gt;&nbsp;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/tbody&gt;<br/>
+         &lt;/table&gt;<br/>
+         &lt;table id="nel10" class="table-responsive" width="98%"&gt;<br/>
+          &lt;thead&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/thead&gt;<br/>
+          &lt;tbody&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td width="1%" style="text-align: center; vertical-align: top;font-weight:bold"&gt;2.&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas" style="padding-right: 15px;font-weight:bold"&gt;El replanteo de manzanas es el cambio drástico en la estructura de una manzana para considerar que una o más manzanas se replantearon, para ello deberá tener 3 características: (1 punto)&lt;br&gt;&lt;br&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="1" name="opcion10" id="opcion10_1" onchange="alt_marcada('opcion10',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(A).&lt;/strong&gt; Cambio en sus polígonos, superficie y forma. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="2" name="opcion10" id="opcion10_2" onchange="alt_marcada('opcion10',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(B).&lt;/strong&gt; Cambio de tamaño, forma y en sus polígonos. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="3" name="opcion10" id="opcion10_3" onchange="alt_marcada('opcion10',this.value)"&gt; &lt;input id="opcion10" type="hidden" value=""&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(C).&lt;/strong&gt; Cambio de orientación, dimensión y forma. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="4" name="opcion10" id="opcion10_4" onchange="alt_marcada('opcion10',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(D).&lt;/strong&gt; Cambio en su superficie, forma y orientación. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="5" name="opcion10" id="opcion10_5" onchange="alt_marcada('opcion10',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(E).&lt;/strong&gt; Cambio en sus polígonos, orientación y forma. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td&gt;&nbsp;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/tbody&gt;<br/>
+         &lt;/table&gt;<br/>
+         &lt;table id="nel31" class="table-responsive" width="98%"&gt;<br/>
+          &lt;thead&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/thead&gt;<br/>
+          &lt;tbody&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td width="1%" style="text-align: center; vertical-align: top;font-weight:bold"&gt;3.&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas" style="padding-right: 15px;font-weight:bold"&gt;Si en el croquis encuentra una vía con nombre y en campo luego de la actualización verifica que no cuenta con uno, como se debe registrar: (1 punto)&lt;br&gt;&lt;br&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="1" name="opcion31" id="opcion31_1" onchange="alt_marcada('opcion31',this.value)"&gt; &lt;input id="opcion31" type="hidden" value=""&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(A).&lt;/strong&gt; De ninguna forma deberá reemplazar el nombre existente por SN (sin nombre). &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="2" name="opcion31" id="opcion31_2" onchange="alt_marcada('opcion31',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(B).&lt;/strong&gt; Cambiar el nombre de vía a SN (sin nombre). &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="3" name="opcion31" id="opcion31_3" onchange="alt_marcada('opcion31',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(C).&lt;/strong&gt; Cambiar el nombre de vía a SN (sin nombre) y registrar en observaciones. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="4" name="opcion31" id="opcion31_4" onchange="alt_marcada('opcion31',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(D).&lt;/strong&gt; Registrar SN y en paréntesis registrar el nombre de vía del croquis. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="5" name="opcion31" id="opcion31_5" onchange="alt_marcada('opcion31',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(E).&lt;/strong&gt; Ninguna de las anteriores. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td&gt;&nbsp;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/tbody&gt;<br/>
+         &lt;/table&gt;<br/>
+         &lt;table id="nel29" class="table-responsive" width="98%"&gt;<br/>
+          &lt;thead&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/thead&gt;<br/>
+          &lt;tbody&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td width="1%" style="text-align: center; vertical-align: top;font-weight:bold"&gt;4.&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas" style="padding-right: 15px;font-weight:bold"&gt;Cuando el mismo centro poblado sea conocido por dos nombres diferentes, se debe escribir en el croquis del conglomerado rural: (1 punto)&lt;br&gt;&lt;br&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="1" name="opcion29" id="opcion29_1" onchange="alt_marcada('opcion29',this.value)"&gt; &lt;input id="opcion29" type="hidden" value=""&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(A).&lt;/strong&gt; Con lapicero de tinta azul, al lado derecho y escribir entre paréntesis el segundo nombre (el menos utilizado por los pobladores). &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="2" name="opcion29" id="opcion29_2" onchange="alt_marcada('opcion29',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(B).&lt;/strong&gt; Solo se debe escribir el nombre que más utilizan los pobladores. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="3" name="opcion29" id="opcion29_3" onchange="alt_marcada('opcion29',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(C).&lt;/strong&gt; Se debe respetar el nombre que figura en el croquis del conglomerado rural. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="4" name="opcion29" id="opcion29_4" onchange="alt_marcada('opcion29',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(D).&lt;/strong&gt; Se debe trazar dos líneas horizontales sobre el nombre y escribir el nombre más reciente. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="5" name="opcion29" id="opcion29_5" onchange="alt_marcada('opcion29',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(E).&lt;/strong&gt; Con lapicero de tinta negra, al lado derecho y escribir entre paréntesis el segundo nombre (el menos utilizado por los pobladores). &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td&gt;&nbsp;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/tbody&gt;<br/>
+         &lt;/table&gt;<br/>
+         &lt;table id="nel1" class="table-responsive" width="98%"&gt;<br/>
+          &lt;thead&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/thead&gt;<br/>
+          &lt;tbody&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td width="1%" style="text-align: center; vertical-align: top;font-weight:bold"&gt;5.&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas" style="padding-right: 15px;font-weight:bold"&gt;En cuanto al fraccionamiento de manzanas, seleccione la alternativa incorrecta: (1 punto)&lt;br&gt;&lt;br&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="1" name="opcion1" id="opcion1_1" onchange="alt_marcada('opcion1',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(A).&lt;/strong&gt; Verificará las proyecciones gráficas de las vías que circundan las manzanas fraccionadas, marcando con lapicero azul el perímetro de las nuevas manzanas y anota las categorías y nombres de las vías que han dividido la manzana original, a efectos de que el dibujo represente la proporción real entre el croquis y el terreno. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="2" name="opcion1" id="opcion1_2" onchange="alt_marcada('opcion1',this.value)"&gt; &lt;input id="opcion1" type="hidden" value=""&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(B).&lt;/strong&gt; Asignará a las manzanas fraccionadas el código original de la manzana que se fraccionó acompañada de la letra A, B o C, etc., según corresponda, continuando con el sentido lógico del recorrido (serpentín) y asegurándose que estos códigos no existan en ninguna otra manzana de la zona &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="3" name="opcion1" id="opcion1_3" onchange="alt_marcada('opcion1',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(C).&lt;/strong&gt; Tachará con aspas (X) las líneas que ya no forman parte del perímetro de las nuevas manzanas; y trace una línea horizontal sobre el código de la manzana original antes del fraccionamiento. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="4" name="opcion1" id="opcion1_4" onchange="alt_marcada('opcion1',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(D).&lt;/strong&gt; Anotará las categorías y nombres de las vías que han dividido la manzana original, el dibujo debe representar la proporción real entre el croquis y el terreno. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="5" name="opcion1" id="opcion1_5" onchange="alt_marcada('opcion1',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(E).&lt;/strong&gt; Ninguna de las anteriores. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td&gt;&nbsp;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/tbody&gt;<br/>
+         &lt;/table&gt;<br/>
+         &lt;table id="nel30" class="table-responsive" width="98%"&gt;<br/>
+          &lt;thead&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/thead&gt;<br/>
+          &lt;tbody&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td width="1%" style="text-align: center; vertical-align: top;font-weight:bold"&gt;6.&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas" style="padding-right: 15px;font-weight:bold"&gt;Cuando el centro poblado ha desaparecido es decir ya no exista, con lapicero de tinta azul se debe registra en el croquis del conglomerado rural: (1 punto)&lt;br&gt;&lt;br&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="1" name="opcion30" id="opcion30_1" onchange="alt_marcada('opcion30',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(A).&lt;/strong&gt; Se debe colocar solo una línea horizontal sobre el nombre que lo representa. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="2" name="opcion30" id="opcion30_2" onchange="alt_marcada('opcion30',this.value)"&gt; &lt;input id="opcion30" type="hidden" value=""&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(B).&lt;/strong&gt; Se debe registrar dos líneas horizontales sobre la simbología y el nombre que lo representa. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="3" name="opcion30" id="opcion30_3" onchange="alt_marcada('opcion30',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(C).&lt;/strong&gt; Se debe registrar dos líneas horizontales sobre el nombre que lo representa. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="4" name="opcion30" id="opcion30_4" onchange="alt_marcada('opcion30',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(D).&lt;/strong&gt; Se debe registrar dos líneas horizontales sobre la simbología. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="5" name="opcion30" id="opcion30_5" onchange="alt_marcada('opcion30',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(E).&lt;/strong&gt; Se debe colocar solo una línea horizontal sobre la simbología y el nombre que lo representa. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td&gt;&nbsp;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/tbody&gt;<br/>
+         &lt;/table&gt;<br/>
+         &lt;table id="nel11" class="table-responsive" width="98%"&gt;<br/>
+          &lt;thead&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/thead&gt;<br/>
+          &lt;tbody&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td width="1%" style="text-align: center; vertical-align: top;font-weight:bold"&gt;7.&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas" style="padding-right: 15px;font-weight:bold"&gt;En la actualización del nombre de las vías consiste en confirmar que el nombre de la vía de tránsito figura en el croquis urbano, cuando se encuentra una vía con dos nombres, se procede: (1 punto)&lt;br&gt;&lt;br&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="1" name="opcion11" id="opcion11_1" onchange="alt_marcada('opcion11',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(1).&lt;/strong&gt; Se deberá sondear y solo se deberá registrar el nombre más reciente. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="2" name="opcion11" id="opcion11_2" onchange="alt_marcada('opcion11',this.value)"&gt; &lt;input id="opcion11" type="hidden" value=""&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(2).&lt;/strong&gt; Registrar el nombre más reciente de la vía, luego anotará el nombre más antiguo entre paréntesis. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="3" name="opcion11" id="opcion11_3" onchange="alt_marcada('opcion11',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(3).&lt;/strong&gt; Se deberá sondear y solo se deberá registrar el nombre más antiguo. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="4" name="opcion11" id="opcion11_4" onchange="alt_marcada('opcion11',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(4).&lt;/strong&gt; Se deberá sondear y se deberá registrar el nombre con él que lo conocen más los pobladores de la zona. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td&gt;&nbsp;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/tbody&gt;<br/>
+         &lt;/table&gt;<br/>
+         &lt;table id="nel26" class="table-responsive" width="98%"&gt;<br/>
+          &lt;thead&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/thead&gt;<br/>
+          &lt;tbody&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td width="1%" style="text-align: center; vertical-align: top;font-weight:bold"&gt;8.&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas" style="padding-right: 15px;font-weight:bold"&gt;Para la actualización cartográfica del conglomerado rural seleccionado, el registrador deberá realizar las acciones siguientes: (1 punto)&lt;br&gt;&lt;br&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="1" name="opcion26" id="opcion26_1" onchange="alt_marcada('opcion26',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(A).&lt;/strong&gt; Copiará los datos actualizados del conglomerado, polígonos de manzanas, simbologías de edificios públicos, nombres de vías, infraestructura urbana, etc. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="2" name="opcion26" id="opcion26_2" onchange="alt_marcada('opcion26',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(B).&lt;/strong&gt; Verificará la orientación del croquis del conglomerado seleccionado en el área rural en campo. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="3" name="opcion26" id="opcion26_3" onchange="alt_marcada('opcion26',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(C).&lt;/strong&gt; Actualizará los nombres de los centros poblados, lugares, ríos, quebradas, lagunas, elevaciones, que corresponden al croquis del conglomerado seleccionado en el área rural asignado como carga de trabajo. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="4" name="opcion26" id="opcion26_4" onchange="alt_marcada('opcion26',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(D).&lt;/strong&gt; Solo a y b &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="5" name="opcion26" id="opcion26_5" onchange="alt_marcada('opcion26',this.value)"&gt; &lt;input id="opcion26" type="hidden" value=""&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(E).&lt;/strong&gt; Solo b y c &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td&gt;&nbsp;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/tbody&gt;<br/>
+         &lt;/table&gt;<br/>
+         &lt;table id="nel28" class="table-responsive" width="98%"&gt;<br/>
+          &lt;thead&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+            &lt;th&gt;&lt;/th&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/thead&gt;<br/>
+          &lt;tbody&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td width="1%" style="text-align: center; vertical-align: top;font-weight:bold"&gt;9.&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas" style="padding-right: 15px;font-weight:bold"&gt;Si durante la verificación del nombre del centro poblado en el croquis del conglomerado rural, el nombre está mal escrito, como se debe proceder: (1 punto)&lt;br&gt;&lt;br&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="1" name="opcion28" id="opcion28_1" onchange="alt_marcada('opcion28',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(A).&lt;/strong&gt; Escribir en el croquis del conglomerado rural con lapicero de tinta azul, al lado derecho y entre paréntesis, el nombre correcto. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="2" name="opcion28" id="opcion28_2" onchange="alt_marcada('opcion28',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(B).&lt;/strong&gt; Trazar con lapicero de tinta azul una línea oblicua sobre el nombre y escribir el nombre correcto. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="3" name="opcion28" id="opcion28_3" onchange="alt_marcada('opcion28',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(C).&lt;/strong&gt; Trazar con lapicero de tinta azul, dos líneas horizontales sobre la simbología y el nombre que lo representa, escribir el nombre correcto. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="4" name="opcion28" id="opcion28_4" onchange="alt_marcada('opcion28',this.value)"&gt; &lt;input id="opcion28" type="hidden" value=""&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(D).&lt;/strong&gt; En el croquis del conglomerado rural y con lapicero de tinta azul, trazará una línea horizontal sobre el nombre incorrecto y escribirá correctamente el nombre corregido en la parte inferior o uno de los lados del nombre mal escrito. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 5em;"&gt;&lt;input type="radio" value="5" name="opcion28" id="opcion28_5" onchange="alt_marcada('opcion28',this.value)"&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+            &lt;td class="tr_preguntas"&gt;<br/>
+             &lt;section style="margin-left: 1em;"&gt;&lt;label&gt;&lt;strong&gt;(E).&lt;/strong&gt; Ninguna de las anteriores. &lt;/label&gt;<br/>
+             &lt;/section&gt;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+           &lt;tr&gt;<br/>
+            &lt;td&gt;&nbsp;&lt;/td&gt;<br/>
+           &lt;/tr&gt;<br/>
+          &lt;/tbody&gt;<br/>
+         &lt;/table&gt;&lt;br&gt;<br/>
+        &lt;/div&gt;&lt;!--&lt;/div&gt;--&gt; &lt;!--&lt;div class="accordion-container" id="seccion02" style="background-color: #ffffff;"&gt;--&gt; &lt;!--&lt;br&gt;--&gt;<br/>
+        &lt;table class="table-responsive" width="98%"&gt;<br/>
+         &lt;tbody&gt;<br/>
+          &lt;tr&gt;<br/>
+           &lt;td width="3%" class="tr_textos" style="text-align: center; vertical-align: top;"&gt;&lt;strong&gt; 10. &lt;/strong&gt;&lt;/td&gt;<br/>
+           &lt;td class="tr_preguntas"&gt;&lt;strong&gt;Colocar verdadero (V) o falso (F) según corresponda a los tipos de modificación que pueden tener en una manzana: (4 puntos)&lt;/strong&gt;&lt;/td&gt;<br/>
+          &lt;/tr&gt;<br/>
+         &lt;/tbody&gt;<br/>
+        &lt;/table&gt;&lt;br&gt;<br/>
+        &lt;table class="table-responsive" width="100%"&gt;<br/>
+         &lt;tbody&gt;<br/>
+          &lt;tr&gt;<br/>
+           &lt;td width="1%" class="tr_textos" style="text-align: center; vertical-align: top;"&gt;&lt;/td&gt;<br/>
+           &lt;td&gt;<br/>
+            &lt;table style="border: #999999 1px; border-style: solid; font-size: 12px;" class="table_exa table-bordered" width="98%"&gt;<br/>
+             &lt;tbody&gt;<br/>
+              &lt;tr id="nel6" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;En el mejoramiento de dibujo de las manzanas debe ser cambiado el código de manzana.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion6" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="1"&gt;V&lt;/option&gt; &lt;option value="2"&gt;F&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel2" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Asigne a la manzana fusionada el código de manzana de menor valor dentro de la fusión, acompañadas de la letra A, B o C, etc.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion2" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="1"&gt;V&lt;/option&gt; &lt;option value="2"&gt;F&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel9" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Para codificar las manzanas nuevas, se debe identificar en el plano urbano la/s manzana/s contigua/s. Se registrará la codificación de la manzana de menor numeración, seguida por el alfabeto respectivo, teniendo en cuenta la contigüidad correlativa y procurando mantener el sentido del serpentín.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion9" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="1"&gt;V&lt;/option&gt; &lt;option value="2"&gt;F&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel3" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Desaparición de manzanas es cuando una manzana se encuentra dibujada en el croquis y luego de verificar las vías que la circundan no se le ubica en el terreno.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion3" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="1"&gt;V&lt;/option&gt; &lt;option value="2"&gt;F&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel8" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Tener en cuenta que si la manzana es un campo deportivo, parque, plaza, terreno comunal etc., considere como “desaparecida”.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion8" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="1"&gt;V&lt;/option&gt; &lt;option value="2"&gt;F&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel5" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;El fraccionamiento de manzanas se refiere cuando una manzana se ha dividido en tres o más manzanas dando origen a nuevas vías entre ellas.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion5" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="1"&gt;V&lt;/option&gt; &lt;option value="2"&gt;F&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel7" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;En la desaparición de manzana en el croquis en borrador, y con lapicero de tinta azul, se tacha con aspas (X) las líneas excedentes; y se traza una línea horizontal sobre su código de la manzana.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion7" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="1"&gt;V&lt;/option&gt; &lt;option value="2"&gt;F&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel4" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Replanteo de manzana se refiere al cambio drástico en la estructura de una manzana, es decir, una o más manzanas han cambiado al mismo tiempo solo en forma y orientación.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion4" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="1"&gt;V&lt;/option&gt; &lt;option value="2"&gt;F&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+             &lt;/tbody&gt;<br/>
+            &lt;/table&gt;&lt;/td&gt;<br/>
+          &lt;/tr&gt;<br/>
+         &lt;/tbody&gt;<br/>
+        &lt;/table&gt;&lt;br&gt;&lt;!--&lt;/div&gt;--&gt; &lt;!--&lt;div class="accordion-container" id="seccion02" style="background-color: #ffffff;"&gt;--&gt; &lt;!--&lt;br&gt;--&gt;<br/>
+        &lt;table class="table-responsive" width="98%"&gt;<br/>
+         &lt;tbody&gt;<br/>
+          &lt;tr&gt;<br/>
+           &lt;td width="3%" class="tr_textos" style="text-align: center; vertical-align: top;"&gt;&lt;strong&gt; 11. &lt;/strong&gt;&lt;/td&gt;<br/>
+           &lt;td class="tr_preguntas"&gt;&lt;strong&gt;Relaciona los conceptos, registrando la definición en el recuadro que corresponda: (3 puntos)&lt;/strong&gt;&lt;/td&gt;<br/>
+          &lt;/tr&gt;<br/>
+         &lt;/tbody&gt;<br/>
+        &lt;/table&gt;&lt;br&gt;<br/>
+        &lt;table class="table-responsive" width="100%"&gt;<br/>
+         &lt;tbody&gt;<br/>
+          &lt;tr&gt;<br/>
+           &lt;td width="1%" class="tr_textos" style="text-align: center; vertical-align: top;"&gt;&lt;/td&gt;<br/>
+           &lt;td&gt;<br/>
+            &lt;table style="border: #999999 1px; border-style: solid; font-size: 12px;" class="table_exa table-bordered" width="98%"&gt;<br/>
+             &lt;tbody&gt;<br/>
+              &lt;tr id="nel14" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Vía de servicio local de uno o más carriles, a veces con una longitud de una cuadra.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion14" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="6"&gt;Plaza&lt;/option&gt; &lt;option value="2"&gt;Pasaje&lt;/option&gt; &lt;option value="4"&gt;Avenida&lt;/option&gt; &lt;option value="3"&gt;Calle&lt;/option&gt; &lt;option value="5"&gt;Jirón&lt;/option&gt; &lt;option value="1"&gt;Vía expresa o autopista&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel16" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Vía vehicular de servicio local, de uno o dos carriles con una longitud de más de una cuadra.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion16" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="6"&gt;Plaza&lt;/option&gt; &lt;option value="1"&gt;Vía expresa o autopista&lt;/option&gt; &lt;option value="4"&gt;Avenida&lt;/option&gt; &lt;option value="2"&gt;Pasaje&lt;/option&gt; &lt;option value="3"&gt;Calle&lt;/option&gt; &lt;option value="5"&gt;Jirón&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel15" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Vía vehicular de 2 o más carriles de circulación en uno o dos sentidos de tránsito, preferentemente con vías de servicios laterales para el acceso a las propiedades.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion15" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="3"&gt;Calle&lt;/option&gt; &lt;option value="2"&gt;Pasaje&lt;/option&gt; &lt;option value="1"&gt;Vía expresa o autopista&lt;/option&gt; &lt;option value="6"&gt;Plaza&lt;/option&gt; &lt;option value="4"&gt;Avenida&lt;/option&gt; &lt;option value="5"&gt;Jirón&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel17" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Área libre y pequeña de uso público, para fines cívicos y recreacionales&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion17" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="3"&gt;Calle&lt;/option&gt; &lt;option value="6"&gt;Plaza&lt;/option&gt; &lt;option value="5"&gt;Jirón&lt;/option&gt; &lt;option value="1"&gt;Vía expresa o autopista&lt;/option&gt; &lt;option value="2"&gt;Pasaje&lt;/option&gt; &lt;option value="4"&gt;Avenida&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel13" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Vía que por lo general es de uso peatonal.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion13" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="6"&gt;Plaza&lt;/option&gt; &lt;option value="2"&gt;Pasaje&lt;/option&gt; &lt;option value="1"&gt;Vía expresa o autopista&lt;/option&gt; &lt;option value="3"&gt;Calle&lt;/option&gt; &lt;option value="5"&gt;Jirón&lt;/option&gt; &lt;option value="4"&gt;Avenida&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel12" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas"&gt;&nbsp;&nbsp;Vía que soporta grandes volúmenes de vehículos con altas velocidades. Une zonas de importante generación de tránsito con extensas áreas de viviendas, concentraciones comerciales y con parques industriales.&lt;/td&gt;<br/>
+               &lt;td style="width: 100px; text-align: center;"&gt;&lt;select id="opcion12" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="2"&gt;Pasaje&lt;/option&gt; &lt;option value="1"&gt;Vía expresa o autopista&lt;/option&gt; &lt;option value="3"&gt;Calle&lt;/option&gt; &lt;option value="5"&gt;Jirón&lt;/option&gt; &lt;option value="6"&gt;Plaza&lt;/option&gt; &lt;option value="4"&gt;Avenida&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+             &lt;/tbody&gt;<br/>
+            &lt;/table&gt;&lt;/td&gt;<br/>
+          &lt;/tr&gt;<br/>
+         &lt;/tbody&gt;<br/>
+        &lt;/table&gt;&lt;br&gt;&lt;!--&lt;/div&gt;--&gt; &lt;!--&lt;div class="accordion-container" id="seccion04" style="background-color: #ffffff;"&gt;--&gt; &lt;!--&lt;br&gt;--&gt;<br/>
+        &lt;table class="table-responsive" width="98%"&gt;<br/>
+         &lt;tbody&gt;<br/>
+          &lt;tr&gt;<br/>
+           &lt;td width="3%" class="tr_textos" style="text-align: center; vertical-align: top;"&gt;&lt;strong&gt; 12. &lt;/strong&gt;&lt;/td&gt;<br/>
+           &lt;td class="tr_preguntas"&gt;&lt;strong&gt;Para registrar en el croquis del conglomerado urbano la presencia de los principales edificios públicos, se cuenta con una tabla de simbología. En ese sentido, registre la simbología de acuerdo al edifico público: (4 puntos)&lt;/strong&gt;&lt;/td&gt;<br/>
+          &lt;/tr&gt;<br/>
+         &lt;/tbody&gt;<br/>
+        &lt;/table&gt;&lt;br&gt;<br/>
+        &lt;table class="table-responsive" width="100%"&gt;<br/>
+         &lt;tbody&gt;<br/>
+          &lt;tr&gt;<br/>
+           &lt;td width="30%" class="tr_textos" style="text-align: center; vertical-align: top;"&gt;&lt;/td&gt;<br/>
+           &lt;td&gt;<br/>
+            &lt;table style="border: #999999 1px; border-style: solid; font-size: 12px;" class="table_exa table-bordered" width="98%"&gt;<br/>
+             &lt;tbody&gt;<br/>
+              &lt;tr style="height: 5em;background:LIGHTGRAY;font-weight: bolder;"&gt;<br/>
+               &lt;td style="text-align: center;font-size: 20px"&gt;SÍMBOLO&lt;/td&gt;<br/>
+               &lt;td style="text-align: center;font-size: 20px"&gt;DESCRIPCIÓN&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel18" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas" style="text-align:center"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/examen/P43_3_3_1.png" style="width:50px"&gt;&lt;/td&gt;<br/>
+               &lt;td style="width: 60%; text-align: center;"&gt;&lt;select id="opcion18" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="8"&gt;Iglesia No Católica&lt;/option&gt; &lt;option value="7"&gt;Institución Educativa Secundaria&lt;/option&gt; &lt;option value="5"&gt;Mercado&lt;/option&gt; &lt;option value="6"&gt;Comisaría&lt;/option&gt; &lt;option value="4"&gt;Comedor Popular&lt;/option&gt; &lt;option value="3"&gt;Hospital&lt;/option&gt; &lt;option value="1"&gt;Municipalidad&lt;/option&gt; &lt;option value="2"&gt;Biblioteca&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel19" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas" style="text-align:center"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/examen/p6_89_2_2.png" style="width:50px"&gt;&lt;/td&gt;<br/>
+               &lt;td style="width: 60%; text-align: center;"&gt;&lt;select id="opcion19" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="7"&gt;Institución Educativa Secundaria&lt;/option&gt; &lt;option value="3"&gt;Hospital&lt;/option&gt; &lt;option value="4"&gt;Comedor Popular&lt;/option&gt; &lt;option value="8"&gt;Iglesia No Católica&lt;/option&gt; &lt;option value="5"&gt;Mercado&lt;/option&gt; &lt;option value="1"&gt;Municipalidad&lt;/option&gt; &lt;option value="6"&gt;Comisaría&lt;/option&gt; &lt;option value="2"&gt;Biblioteca&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel20" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas" style="text-align:center"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/examen/P43_3_3_2.png" style="width:50px"&gt;&lt;/td&gt;<br/>
+               &lt;td style="width: 60%; text-align: center;"&gt;&lt;select id="opcion20" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="1"&gt;Municipalidad&lt;/option&gt; &lt;option value="2"&gt;Biblioteca&lt;/option&gt; &lt;option value="5"&gt;Mercado&lt;/option&gt; &lt;option value="7"&gt;Institución Educativa Secundaria&lt;/option&gt; &lt;option value="8"&gt;Iglesia No Católica&lt;/option&gt; &lt;option value="3"&gt;Hospital&lt;/option&gt; &lt;option value="6"&gt;Comisaría&lt;/option&gt; &lt;option value="4"&gt;Comedor Popular&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel21" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas" style="text-align:center"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/examen/p3_27_7_1.png" style="width:50px"&gt;&lt;/td&gt;<br/>
+               &lt;td style="width: 60%; text-align: center;"&gt;&lt;select id="opcion21" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="7"&gt;Institución Educativa Secundaria&lt;/option&gt; &lt;option value="4"&gt;Comedor Popular&lt;/option&gt; &lt;option value="2"&gt;Biblioteca&lt;/option&gt; &lt;option value="8"&gt;Iglesia No Católica&lt;/option&gt; &lt;option value="3"&gt;Hospital&lt;/option&gt; &lt;option value="5"&gt;Mercado&lt;/option&gt; &lt;option value="6"&gt;Comisaría&lt;/option&gt; &lt;option value="1"&gt;Municipalidad&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel22" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas" style="text-align:center"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/examen/p6_89_2_5.png" style="width:50px"&gt;&lt;/td&gt;<br/>
+               &lt;td style="width: 60%; text-align: center;"&gt;&lt;select id="opcion22" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="6"&gt;Comisaría&lt;/option&gt; &lt;option value="1"&gt;Municipalidad&lt;/option&gt; &lt;option value="5"&gt;Mercado&lt;/option&gt; &lt;option value="7"&gt;Institución Educativa Secundaria&lt;/option&gt; &lt;option value="4"&gt;Comedor Popular&lt;/option&gt; &lt;option value="2"&gt;Biblioteca&lt;/option&gt; &lt;option value="3"&gt;Hospital&lt;/option&gt; &lt;option value="8"&gt;Iglesia No Católica&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel23" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas" style="text-align:center"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/examen/P43_3_3_5.png" style="width:50px"&gt;&lt;/td&gt;<br/>
+               &lt;td style="width: 60%; text-align: center;"&gt;&lt;select id="opcion23" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="5"&gt;Mercado&lt;/option&gt; &lt;option value="3"&gt;Hospital&lt;/option&gt; &lt;option value="7"&gt;Institución Educativa Secundaria&lt;/option&gt; &lt;option value="8"&gt;Iglesia No Católica&lt;/option&gt; &lt;option value="6"&gt;Comisaría&lt;/option&gt; &lt;option value="4"&gt;Comedor Popular&lt;/option&gt; &lt;option value="1"&gt;Municipalidad&lt;/option&gt; &lt;option value="2"&gt;Biblioteca&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel24" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas" style="text-align:center"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/examen/P43_3_3_8.png" style="width:50px"&gt;&lt;/td&gt;<br/>
+               &lt;td style="width: 60%; text-align: center;"&gt;&lt;select id="opcion24" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="6"&gt;Comisaría&lt;/option&gt; &lt;option value="5"&gt;Mercado&lt;/option&gt; &lt;option value="8"&gt;Iglesia No Católica&lt;/option&gt; &lt;option value="4"&gt;Comedor Popular&lt;/option&gt; &lt;option value="1"&gt;Municipalidad&lt;/option&gt; &lt;option value="2"&gt;Biblioteca&lt;/option&gt; &lt;option value="3"&gt;Hospital&lt;/option&gt; &lt;option value="7"&gt;Institución Educativa Secundaria&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+              &lt;tr id="nel25" style="height: 5em;"&gt;<br/>
+               &lt;td class="tr_preguntas" style="text-align:center"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/examen/P43_3_3_10.png" style="width:50px"&gt;&lt;/td&gt;<br/>
+               &lt;td style="width: 60%; text-align: center;"&gt;&lt;select id="opcion25" style="width: 80%;height: 25px;font-size: revert;"&gt; &lt;option value=""&gt;Seleccione&lt;/option&gt; &lt;option value="1"&gt;Municipalidad&lt;/option&gt; &lt;option value="5"&gt;Mercado&lt;/option&gt; &lt;option value="8"&gt;Iglesia No Católica&lt;/option&gt; &lt;option value="6"&gt;Comisaría&lt;/option&gt; &lt;option value="3"&gt;Hospital&lt;/option&gt; &lt;option value="4"&gt;Comedor Popular&lt;/option&gt; &lt;option value="7"&gt;Institución Educativa Secundaria&lt;/option&gt; &lt;option value="2"&gt;Biblioteca&lt;/option&gt; &lt;/select&gt;&lt;/td&gt;<br/>
+              &lt;/tr&gt;<br/>
+             &lt;/tbody&gt;<br/>
+            &lt;/table&gt;&lt;/td&gt;<br/>
+           &lt;td width="30%" class="tr_textos" style="text-align: center; vertical-align: top;"&gt;&lt;/td&gt;<br/>
+          &lt;/tr&gt;<br/>
+         &lt;/tbody&gt;<br/>
+        &lt;/table&gt;&lt;br&gt;<br/>
+       &lt;/div&gt;&lt;input type="hidden" value="27-10-31-29-1-30-11-26-28-6-2-9-3-8-5-7-4-14-16-15-17-13-12-18-19-20-21-22-23-24-25-" name="pregunta1" id="pregunta1"&gt;<br/>
+       &lt;div class="col-md-12  col-lg-12"&gt;<br/>
+        &lt;div class="col-md-2  col-lg-2"&gt;&lt;/div&gt;<br/>
+        &lt;div class="col-md-8  col-lg-8"&gt;<br/>
+         &lt;section style="margin: 2em;"&gt;&lt;!--&lt;button type="button" class="btn btn-primary  btn-block" style=" height: 2.5em;" id="anterior02" name="anterior02"&gt;&lt;i class="fa fa-reply"&gt;&lt;/i&gt; ANTERIOR&lt;/button&gt;--&gt; &lt;!--&lt;button type="button" class="btn btn-primary  btn-block" style=" height: 2.5em;" id="sigte02" name="sigte02"&gt;SIGUIENTE &lt;i class="fa fa-share"&gt;&lt;/i&gt;&lt;/button&gt;--&gt; &lt;button type="button" class="btn btn-primary  btn-block" style=" height: 2.5em;" id="enviar_c3" name="enviar_c3"&gt;ENVIAR &nbsp;&lt;i class="fa fa-paper-plane"&gt;&lt;/i&gt;&lt;/button&gt;<br/>
+         &lt;/section&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="col-md-2  col-lg-2"&gt;&lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+      &lt;div class="col-md-1  col-lg-1"&gt;&lt;/div&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+  &lt;/div&gt;&lt;!-- Modal --&gt;<br/>
+  &lt;div class="modal fade" id="modal-general" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"&gt;<br/>
+   &lt;div class="modal-dialog" role="document"&gt;<br/>
+    &lt;div class="modal-content"&gt;<br/>
+     &lt;div class="modal-header" style="background-color: #3276B1"&gt;&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;×&lt;/span&gt;&lt;/button&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="modal-body"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/ajax-loader.gif"&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="modal-footer" style="background-color: #1E1D1C;text-align:center;"&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+  &lt;/div&gt;&lt;!-- Scripts --&gt; &lt;!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)--&gt;<br/>
+  &lt;script data-pace-options="{ &quot;restartOnRequestAfter&quot;: true }" src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/pace/pace.min.js"&gt;&lt;/script&gt;&lt;!-- Link to Google CDN's jQuery + jQueryUI; fall back to local --&gt;<br/>
+  &lt;script&gt;<br/>
+    if (!window.jQuery) {<br/>
+        document.write('&lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/libs/jquery-2.1.1.min.js"&gt;&lt;\/script&gt;');<br/>
+    }<br/>
+&lt;/script&gt;<br/>
+  &lt;script&gt;<br/>
+    $.ajaxSetup({<br/>
+        headers: {<br/>
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')<br/>
+        }<br/>
+    });<br/>
+&lt;/script&gt;<br/>
+  &lt;script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script&gt;<br/>
+    if (!window.jQuery.ui) {<br/>
+        document.write('&lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/libs/jquery-ui-1.10.3.min.js"&gt;&lt;\/script&gt;');<br/>
+    }<br/>
+&lt;/script&gt;<br/>
+  &lt;script&gt;<br/>
+        function muestra_oculta(id){<br/>
+            if (document.getElementById){<br/>
+                var el = document.getElementById(id);<br/>
+                el.style.display = (el.style.display == 'none') ? 'block' : 'none';<br/>
+            }<br/>
+        }<br/>
+        window.onload = function(){<br/>
+            muestra_oculta('contenido');<br/>
+<br/>
+        }<br/>
+&lt;/script&gt;&lt;!-- IMPORTANT: APP CONFIG --&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/app.config.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/min/smartadmin-plugins.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/app.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/app/util/util.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/app/capacitacion/nivel51_control01.js?"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript"&gt;<br/>
+<br/>
+    $(document).ready(function() {<br/>
+        pageSetUp();<br/>
+        $('#modal-general').on('show.bs.modal', function(e){<br/>
+            var modal  = $(this);<br/>
+            var button = $(e.relatedTarget);// Button that triggered the modal<br/>
+            var link = button.data('link');<br/>
+<br/>
+            $.ajax({<br/>
+                type : 'get',<br/>
+                url : link,<br/>
+                beforeSend: function(){<br/>
+                    modal.find('.modal-body').html('&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/ajax-loader.gif" class="center-block"/&gt;');<br/>
+                },<br/>
+                success : function(result) {<br/>
+                    modal.find('.modal-body').html(result);<br/>
+                },<br/>
+                error: function(result, status) {<br/>
+                    alert('Error ' + status + ' al cargar la información, Intente nuevamente.')<br/>
+                }<br/>
+            });<br/>
+        })<br/>
+<br/>
+    })<br/>
+<br/>
+<br/>
+<br/>
+&lt;/script&gt;<br/>
+  &lt;style&gt;<br/>
+    .dataTable &gt; thead &gt; tr &gt; th[class*="sort"]::after{display: none}<br/>
+&lt;/style&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/highcharts/code/highcharts.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/highcharts/code/highcharts-3d.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/highcharts/code/highcharts-more.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/highcharts/code/exporting.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/fancybox/jquery.fancybox.pack.js?v=2.1.7"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatables/jquery.dataTables.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatables/dataTables.colVis.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatables/dataTables.tableTools.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatables/dataTables.bootstrap.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatable-responsive/datatables.responsive.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatable-responsive/datatables.responsive.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/jquery.dataTables.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/dataTables.buttons.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/buttons.flash.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/jszip.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/pdfmake.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/vfs_fonts.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/buttons.html5.min.js"&gt;&lt;/script&gt;&lt;!--NUEVO --&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/buttons.print.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/export.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/jquery.sumoselect.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script&gt;<br/>
+        window.dataLayer = window.dataLayer || [];<br/>
+        function gtag(){dataLayer.push(arguments);}<br/>
+        gtag('js', new Date());<br/>
+        gtag('config', 'UA-104380336-8');<br/>
+        /**/<br/>
+        function getURLParameter(name) {<br/>
+            return decodeURI((RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]);<br/>
+        }<br/>
+        function hideURLParams() {<br/>
+            var hide = ['menu_id_est'];<br/>
+            for(var h in hide) {<br/>
+                if(getURLParameter(h)) {<br/>
+                    history.replaceState(null, document.getElementsByTagName("title")[0].innerHTML, window.location.pathname);<br/>
+                }<br/>
+            }<br/>
+        }<br/>
+        window.onload=hideURLParams();<br/>
+    &lt;/script&gt;&lt;!--&lt;script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""&gt;&lt;/script&gt;--&gt;<br/>
+  &lt;div id="divSmallBoxes"&gt;&lt;/div&gt;<br/>
+  &lt;div id="divMiniIcons"&gt;&lt;/div&gt;<br/>
+  &lt;div id="divbigBoxes"&gt;&lt;/div&gt;<br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>

@@ -1,0 +1,773 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html lang="es"&gt;<br/>
+ &lt;head&gt;<br/>
+  &lt;meta charset="utf-8"&gt;<br/>
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br/>
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;&lt;!-- CSRF Token --&gt;<br/>
+  &lt;meta name="csrf-token" content="e2uBFanG308U9qlUhcCfEGGrLcnC1FR9zOfYdl8Y"&gt;<br/>
+  &lt;title&gt;EPEN&lt;/title&gt;<br/>
+  &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css"&gt;<br/>
+  &lt;script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;link rel="stylesheet" href="https://testing.inei.gob.pe/QA/epen/public/js/fancybox/jquery.fancybox.css?v=2.1.7" type="text/css" media="screen"&gt;&lt;!-- Styles --&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/bootstrap.min.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/font-awesome.min.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/smartadmin-production.min.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/app.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/your_style.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/css/sweetalert.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="https://testing.inei.gob.pe/QA/epen/public/js/sumoselect.min.css" rel="stylesheet"&gt;&lt;!-- FAVICONS --&gt;<br/>
+  &lt;link rel="shortcut icon" href="https://testing.inei.gob.pe/QA/epen/public/img/icono.ico" type="image/x-icon"&gt;<br/>
+  &lt;link rel="icon" href="https://testing.inei.gob.pe/QA/epen/public/img/icono.ico" type="image/x-icon"&gt;&lt;!-- GOOGLE FONT --&gt;<br/>
+  &lt;link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oswald:400italic,700"&gt;<br/>
+  &lt;link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700"&gt;<br/>
+  &lt;link href="https://fonts.googleapis.com/css?family=Viga&amp;display=swap" rel="stylesheet"&gt;<br/>
+  &lt;link rel="stylesheet" href="https://testing.inei.gob.pe/QA/epen/public/css/animate.css"&gt;<br/>
+  &lt;style&gt;<br/>
+<br/>
+<br/>
+        body {<br/>
+            overflow-x: hidden;<br/>
+            width: 100%;<br/>
+        }<br/>
+<br/>
+<br/>
+        .botons{<br/>
+            background-color: #2A75B7;<br/>
+            border: none;<br/>
+            color: white;<br/>
+            padding: 14px;<br/>
+            float: right;<br/>
+            text-align: center;<br/>
+            text-decoration: none;<br/>
+            display: inline-block;<br/>
+            font-size: 12px;<br/>
+            margin: 4px 15px;<br/>
+            cursor: pointer;<br/>
+            border-radius: 4px;<br/>
+<br/>
+        }<br/>
+<br/>
+        .input{<br/>
+            -webkit-appearance: none;<br/>
+            width: 100%;<br/>
+            border: 0;<br/>
+            font-family: inherit;<br/>
+            height: 28px;<br/>
+            font-size: 16px;<br/>
+            font-weight: 500;<br/>
+            border-bottom: 1px solid #0c7cd5 ;<br/>
+            background: #ffffff;<br/>
+            border-radius: 0;<br/>
+            color: #223254;<br/>
+            transform: scaleX(1);<br/>
+        }<br/>
+<br/>
+<br/>
+  @media (min-width: 1921px){<br/>
+        .lad1{width: 55%; float: left;}<br/>
+        .lad2{width: 68%; float: right;}<br/>
+        .main<br/>
+        {<br/>
+            width: 100%;<br/>
+            height: 100%;<br/>
+            margin: 0 !important;<br/>
+<br/>
+            position: absolute;<br/>
+            background-image:url(https://testing.inei.gob.pe/QA/epen/public/img/1.jpg);<br/>
+            background-repeat:no-repeat;<br/>
+            background-size: 100% 100%;<br/>
+        }<br/>
+<br/>
+        .lad3{width: 50%; float: left;}<br/>
+        .lad4{width: 50%; float: right;}<br/>
+        .content-box {<br/>
+            width: 50%;<br/>
+            height:490px;<br/>
+            margin-top: 20%;<br/>
+            background-color: #ffffff;<br/>
+            border: 1px solid #bdbdbd;<br/>
+            vertical-align: middle;<br/>
+            opacity: 0.9;<br/>
+            z-index: 1;<br/>
+            position: relative;<br/>
+            -webkit-box-shadow: 2px 2px 5px #999;<br/>
+            -moz-box-shadow: 2px 2px 5px #999;<br/>
+        }<br/>
+<br/>
+        .content-text{<br/>
+            width: 100%;<br/>
+            padding-left: 1em;<br/>
+            padding-top: 0.5em;<br/>
+            padding-bottom: 1em;<br/>
+            padding-right: 2em;<br/>
+            float: left;<br/>
+            z-index: -2;<br/>
+            position: absolute;<br/>
+        }<br/>
+        .content-imagenens{<br/>
+            width: 100%;<br/>
+            padding: 0.5em;<br/>
+        }<br/>
+<br/>
+        .main img{<br/>
+            width: 45%;<br/>
+            height: 45%;<br/>
+            margin-left: 25%;<br/>
+            padding-left: 1em;<br/>
+            padding-bottom: 2em;<br/>
+            padding-right: 0;<br/>
+            padding-top: 0;<br/>
+        }<br/>
+        .main h1{<br/>
+            font-size: 2.2em;<br/>
+            font-family:Arial Narrow;<br/>
+            color: #0E70CA;<br/>
+            font-weight: bold;<br/>
+            text-align: left;<br/>
+            position: relative;<br/>
+        }<br/>
+        .main h2{<br/>
+            font-size: 2.3em;<br/>
+            font-family:Arial Narrow;<br/>
+            color: #253e5a;<br/>
+            font-weight: bold;<br/>
+            text-align: center;<br/>
+            position: relative;<br/>
+            margin: 2px 0 2px 0;<br/>
+            padding-left: 0.5em;<br/>
+            padding-right: 1em;<br/>
+        }<br/>
+        .main p{<br/>
+            font-size: 1.2em;<br/>
+            font-family:Arial Narrow;<br/>
+            color: #000000;<br/>
+            text-align:justify;<br/>
+            position: relative;<br/>
+        }<br/>
+<br/>
+  }<br/>
+<br/>
+  @media (max-width: 1920px){<br/>
+    .lad1{width: 55%; float: left;}<br/>
+    .lad2{width: 68%; float: right;}<br/>
+    .main<br/>
+    {<br/>
+        width: 100%;<br/>
+        height: 100%;<br/>
+        margin: 0 !important;<br/>
+<br/>
+        position: absolute;<br/>
+        background-image:url(https://testing.inei.gob.pe/QA/epen/public/img/1.jpg);<br/>
+        background-repeat:no-repeat;<br/>
+        background-size: 100% 100%;<br/>
+    }<br/>
+<br/>
+      .lad3{width: 50%; float: left;}<br/>
+      .lad4{width: 50%; float: right;}<br/>
+    .content-box {<br/>
+        width: 50%;<br/>
+        height:490px;<br/>
+        margin-top: 20%;<br/>
+        background-color: #ffffff;<br/>
+        border: 1px solid #bdbdbd;<br/>
+        vertical-align: middle;<br/>
+        opacity: 0.9;<br/>
+        z-index: 1;<br/>
+        position: relative;<br/>
+        -webkit-box-shadow: 2px 2px 5px #999;<br/>
+        -moz-box-shadow: 2px 2px 5px #999;<br/>
+     }<br/>
+<br/>
+    .content-text{<br/>
+        width: 100%;<br/>
+        padding-left: 1em;<br/>
+        padding-top: 0.5em;<br/>
+        padding-bottom: 1em;<br/>
+        padding-right: 2em;<br/>
+        float: left;<br/>
+        z-index: -2;<br/>
+        position: absolute;<br/>
+    }<br/>
+      .content-imagenens{<br/>
+          width: 100%;<br/>
+          padding: 0.5em;<br/>
+      }<br/>
+<br/>
+    .main img{<br/>
+        width: 45%;<br/>
+        height: 45%;<br/>
+        margin-left: 25%;<br/>
+        padding-left: 1em;<br/>
+        padding-bottom: 2em;<br/>
+        padding-right: 0;<br/>
+        padding-top: 0;<br/>
+    }<br/>
+    .main h1{<br/>
+         font-size: 2.2em;<br/>
+         font-family:Arial Narrow;<br/>
+         color: #0E70CA;<br/>
+         font-weight: bold;<br/>
+         text-align: left;<br/>
+         position: relative;<br/>
+      }<br/>
+    .main h2{<br/>
+          font-size: 2.3em;<br/>
+          font-family:Arial Narrow;<br/>
+          color: #253e5a;<br/>
+          font-weight: bold;<br/>
+          text-align: center;<br/>
+          position: relative;<br/>
+        margin: 2px 0 2px 0;<br/>
+        padding-left: 0.5em;<br/>
+        padding-right: 1em;<br/>
+      }<br/>
+    .main p{<br/>
+        font-size: 1.2em;<br/>
+        font-family:Arial Narrow;<br/>
+        color: #000000;<br/>
+        text-align:justify;<br/>
+        position: relative;<br/>
+    }<br/>
+<br/>
+  }<br/>
+<br/>
+<br/>
+        @media (max-width: 1601px) and (min-width:1366px) {<br/>
+            .lad1{width: 55%; float: left;}<br/>
+            .lad2{width: 68%; float: right;}<br/>
+            .main<br/>
+            {<br/>
+                width: 100%;<br/>
+                height: 100%;<br/>
+                margin: 0 !important;<br/>
+                position: absolute;<br/>
+                background-image:url(https://testing.inei.gob.pe/QA/epen/public/img/1.jpg);<br/>
+                background-repeat:no-repeat;<br/>
+                background-size: 100% 100%;<br/>
+<br/>
+            }<br/>
+            .content-box {<br/>
+                width: 50%;<br/>
+                height:470px;<br/>
+                margin-top: 18%;<br/>
+                background-color: #ffffff;<br/>
+                border: 1px solid #bdbdbd;<br/>
+                vertical-align: middle;<br/>
+                opacity: 0.9;<br/>
+                z-index: 1;<br/>
+                position: relative;<br/>
+                -webkit-box-shadow: 2px 2px 5px #999;<br/>
+                -moz-box-shadow: 2px 2px 5px #999;<br/>
+            }<br/>
+            .content-text{<br/>
+                width: 100%;<br/>
+                padding-left: 1.5em;<br/>
+                padding-bottom: 0.5em;<br/>
+                padding-right: 2em;<br/>
+                padding-top: 1em;<br/>
+                float: left;<br/>
+                z-index: -2;<br/>
+                position: absolute;<br/>
+            }<br/>
+            .content-imagenens{<br/>
+                width: 100%;  padding: 0.5em;<br/>
+<br/>
+            }<br/>
+            .content-text2{<br/>
+                width: 50%;<br/>
+                padding-left: 3em;<br/>
+                padding-bottom: 5em;<br/>
+                padding-right: 7em;<br/>
+                padding-top: 14em;<br/>
+                float: right;<br/>
+            }<br/>
+            .main img{<br/>
+                width: 48%;<br/>
+                height: 48%;<br/>
+                padding: 1em;<br/>
+            }<br/>
+            .main h1{<br/>
+                font-size: 1.8em;<br/>
+                font-family:Arial Narrow;<br/>
+                color: #0E70CA;<br/>
+                font-weight: bold;<br/>
+                text-align: left;<br/>
+                position: relative;<br/>
+            }<br/>
+            .main h2{<br/>
+                font-size: 2.3em;<br/>
+                font-family:Arial Narrow;<br/>
+                color: #253e5a;<br/>
+                font-weight: bold;<br/>
+                text-align: center;<br/>
+                position: relative;<br/>
+                padding-left: 0.3em;<br/>
+                padding-right: 0.3em;<br/>
+            }<br/>
+            .main p{<br/>
+                font-size: 1em;<br/>
+                font-family:Arial Narrow;<br/>
+                color: #000000;<br/>
+                text-align:justify;<br/>
+                position: relative;<br/>
+            }<br/>
+        }<br/>
+<br/>
+<br/>
+<br/>
+@media (max-width: 1365px) and (min-width:1025px) {<br/>
+    .lad1{width: 55%; float: left;}<br/>
+    .lad2{width: 68%; float: right;}<br/>
+    .main<br/>
+    {<br/>
+        width: 100%;<br/>
+        height: 100%;<br/>
+        margin: 0 !important;<br/>
+        position: absolute;<br/>
+        background-image:url(https://testing.inei.gob.pe/QA/epen/public/img/1.jpg);<br/>
+        background-repeat:no-repeat;<br/>
+        background-size: 100% 100%;<br/>
+<br/>
+    }<br/>
+    .content-box {<br/>
+        width: 50%;<br/>
+        height:450px;<br/>
+        margin-top: 18%;<br/>
+        background-color: #ffffff;<br/>
+        border: 1px solid #bdbdbd;<br/>
+        vertical-align:middle;<br/>
+        opacity: 0.8;<br/>
+        z-index: 1;<br/>
+        position: relative;<br/>
+        -webkit-box-shadow: 2px 2px 5px #999;<br/>
+        -moz-box-shadow: 2px 2px 5px #999;<br/>
+    }<br/>
+    .content-text{<br/>
+        width: 100%;<br/>
+        padding-left: 1em;<br/>
+        padding-bottom:1em;<br/>
+        padding-right: 1em;<br/>
+        padding-top: 1em;<br/>
+        float: left;<br/>
+        z-index: -2;<br/>
+        position: absolute;<br/>
+    }<br/>
+    .content-imagenens{<br/>
+        width: 100%;  padding: 0.5em;<br/>
+<br/>
+    }<br/>
+    .content-text2{<br/>
+        width: 50%;<br/>
+        padding-left: 3em;<br/>
+        padding-bottom: 5em;<br/>
+        padding-right: 4em;<br/>
+        padding-top: 15em;<br/>
+        float: right;<br/>
+    }<br/>
+    .main img{<br/>
+        width: 48%;<br/>
+        height: 48%;<br/>
+        padding: 1em;<br/>
+    }<br/>
+    .main h1{<br/>
+        font-size: 1.8em;<br/>
+        font-family:Arial Narrow;<br/>
+        color: #0E70CA;<br/>
+        font-weight: bold;<br/>
+        text-align: left;<br/>
+        position: relative;<br/>
+    }<br/>
+    .main h2{<br/>
+        font-size: 2.3em;<br/>
+        font-family:Arial Narrow;<br/>
+        color: #253e5a;<br/>
+        font-weight: bold;<br/>
+        text-align: center;<br/>
+        position: relative;<br/>
+        padding-left: 0.8em;<br/>
+    }<br/>
+    .main p{<br/>
+        font-size: 1em;<br/>
+        font-family:Arial Narrow;<br/>
+        color: #000000;<br/>
+        text-align:justify;<br/>
+        position: relative;<br/>
+    }<br/>
+}<br/>
+<br/>
+@media (max-width: 1024px) and (min-width:700px) {<br/>
+    .lad1{width: 50%; float: left;}<br/>
+    .lad2{width: 68%; float: right;}<br/>
+    .main<br/>
+    {<br/>
+        width: 100%;<br/>
+        min-height: 100%;<br/>
+        height: 100vh;<br/>
+        margin: 0 !important;<br/>
+        position: absolute;<br/>
+        background-image:url(https://testing.inei.gob.pe/QA/epen/public/img/1.jpg);<br/>
+        background-repeat:no-repeat;<br/>
+        background-size: 100% 100%;<br/>
+    }<br/>
+    .content-box {<br/>
+        width: 50%;<br/>
+        height:420px;<br/>
+        margin-top: 17%;<br/>
+        background-color: #ffffff;<br/>
+        border: 1px solid #bdbdbd;<br/>
+        vertical-align: middle !important;<br/>
+        opacity: 0.8;<br/>
+        z-index: 1;<br/>
+        position: relative;<br/>
+        -webkit-box-shadow: 2px 2px 5px #999;<br/>
+        -moz-box-shadow: 2px 2px 5px #999;<br/>
+    }<br/>
+    .content-text{<br/>
+        width: 100%;<br/>
+        padding-left: 1em;<br/>
+        padding-bottom: 1em;<br/>
+        padding-right: 0;<br/>
+        padding-top: 1em;<br/>
+        float: left;<br/>
+        z-index: -2;<br/>
+        position: absolute;<br/>
+    }<br/>
+    .content-imagenens{<br/>
+        width: 100%;  padding: 0.5em;<br/>
+<br/>
+    }<br/>
+    .main img{<br/>
+        width: 50%;<br/>
+        height: 50%;<br/>
+        padding: 1em;<br/>
+    }<br/>
+    .main h1{<br/>
+        font-size: 1.4em;<br/>
+        font-family:Arial Narrow;<br/>
+        color: #0E70CA;<br/>
+        font-weight: bold;<br/>
+        text-align: left;<br/>
+        position: relative;<br/>
+        margin: 3px 0 3px 0;<br/>
+    }<br/>
+    .main h2{<br/>
+        font-size: 2.3em;<br/>
+        font-family:Arial Narrow;<br/>
+        color: #253e5a;<br/>
+        font-weight: bold;<br/>
+        text-align: center;<br/>
+        position: relative;<br/>
+        padding-left: 1em;<br/>
+    }<br/>
+    .main p{<br/>
+        font-size: 0.9em;<br/>
+        font-family:Arial Narrow;<br/>
+        color: #000000;<br/>
+        text-align:justify;<br/>
+        position: relative;<br/>
+<br/>
+    }<br/>
+}<br/>
+<br/>
+ @media (max-width: 699px) and (min-width: 500px)   {<br/>
+     .lad1{width: 0%; float: left;}<br/>
+     .lad2{width: 100%; float: left;}<br/>
+     .main{<br/>
+         width: 100%;<br/>
+         margin: 0 !important;<br/>
+         position: absolute;<br/>
+         background-image:url(https://testing.inei.gob.pe/QA/epen/public/img/1.jpg);<br/>
+         background-repeat:no-repeat;<br/>
+         background-size: 100% 100%;<br/>
+         min-height: content-box;<br/>
+         height: 100vh;<br/>
+     }<br/>
+     .content-box {<br/>
+         width: 50%;<br/>
+         height:530px;<br/>
+         margin-left: 26%;<br/>
+         margin-top: 7%;<br/>
+         background-color: #ffffff;<br/>
+         border: 1px solid #bdbdbd;<br/>
+         vertical-align:middle;<br/>
+         opacity: 0.8;<br/>
+         z-index: 1;<br/>
+         position: relative;<br/>
+         -webkit-box-shadow: 2px 2px 5px #999;<br/>
+         -moz-box-shadow: 2px 2px 5px #999;<br/>
+     }<br/>
+     .content-text{<br/>
+         width: 100%;<br/>
+         padding-top: 1em;<br/>
+         padding-right: 1em;<br/>
+         padding-left: 1em;<br/>
+         float: left;<br/>
+         z-index: -2;<br/>
+     }<br/>
+     .content-imagenens{<br/>
+         width: 100%;<br/>
+         padding: 0.5em;<br/>
+     }<br/>
+     .main img{<br/>
+         width: 36%;<br/>
+         height:35%;<br/>
+         margin-left: 35%;<br/>
+     }<br/>
+     .main h1{<br/>
+         font-size: 2.3em;<br/>
+         font-family:Arial Narrow;<br/>
+         color: #0E70CA;<br/>
+         font-weight: bold;<br/>
+         text-align: center;<br/>
+         margin: 3px 0 5px 0;<br/>
+     }<br/>
+     .main h2{<br/>
+         font-size: 2.3em;<br/>
+         font-family:Arial Narrow;<br/>
+         color: #253e5a;<br/>
+         font-weight: bold;<br/>
+         text-align: center;<br/>
+         width: 95%;<br/>
+         margin: 3px 0 5px 0;<br/>
+     }<br/>
+     .main p{<br/>
+         font-size: 1em;<br/>
+         font-family:Arial Narrow;<br/>
+         color: #000000;<br/>
+         width: 94%;<br/>
+         text-align:justify;<br/>
+<br/>
+     }<br/>
+ }<br/>
+<br/>
+<br/>
+<br/>
+ @media (max-width: 499px)  {<br/>
+     .lad1{width: 0%; float: left;}<br/>
+     .lad2{width: 100%; float: left;}<br/>
+            .main<br/>
+            {<br/>
+                width: 100%;<br/>
+                margin: 1em;<br/>
+                position: absolute;<br/>
+                background-image:url(https://testing.inei.gob.pe/QA/epen/public/img/1.jpg);<br/>
+                background-repeat:no-repeat;<br/>
+                background-size:200% 100%;<br/>
+                min-height: 100%;<br/>
+                height: 100vh;<br/>
+            }<br/>
+            .content-box {<br/>
+                width: 50%;<br/>
+                height: 400px;<br/>
+                margin-top: 7%;<br/>
+                margin-left: 26%;<br/>
+                background-color: #ffffff;<br/>
+                border: 1px solid #bdbdbd;<br/>
+                vertical-align: middle !important;<br/>
+                opacity: 0.8;<br/>
+                z-index: 1;<br/>
+                position: relative;<br/>
+                -webkit-box-shadow: 2px 2px 5px #999;<br/>
+                -moz-box-shadow: 2px 2px 5px #999;<br/>
+            }<br/>
+            .content-text{<br/>
+                width: 100%;<br/>
+                padding: 1.5em;<br/>
+                float: top;<br/>
+                z-index: -2;<br/>
+            }<br/>
+            .content-imagenens{<br/>
+               width: 100%;<br/>
+                padding: 0.5em;<br/>
+<br/>
+            }<br/>
+            .main img{<br/>
+                width: 40%;<br/>
+                height:45%;<br/>
+                margin-left: 27%;<br/>
+            }<br/>
+            .main h1{<br/>
+                font-size: 1.4em;<br/>
+                font-family:Arial Narrow;<br/>
+                color: #0E70CA;<br/>
+                font-weight: bold;<br/>
+                text-align: center;<br/>
+                margin: 2px 0 4px 0;<br/>
+            }<br/>
+            .main h2{<br/>
+                font-size: 1.3em;<br/>
+                font-family:Arial Narrow;<br/>
+                color: #253e5a;<br/>
+                font-weight: bold;<br/>
+                text-align: center;<br/>
+                width: 95%;<br/>
+                margin: 2px 0 4px 0;<br/>
+            }<br/>
+            .main p{<br/>
+                font-size: 0.9em;<br/>
+                font-family:Arial Narrow;<br/>
+                color: #000000;<br/>
+                width: 94%;<br/>
+                text-align:justify;<br/>
+<br/>
+            }<br/>
+        }<br/>
+<br/>
+<br/>
+<br/>
+&lt;/style&gt;<br/>
+  &lt;script type="text/javascript"&gt;<br/>
+        window.APP_URL = 'https://testing.inei.gob.pe/QA/epen/public/';<br/>
+        window.SERVICE_URL = 'https://testing.inei.gob.pe/QA/epen/public/personal/services';<br/>
+<br/>
+<br/>
+    &lt;/script&gt;<br/>
+  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"&gt;<br/>
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"&gt;<br/>
+  &lt;script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"&gt;&lt;/script&gt;&lt;!--&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/&gt;--&gt;<br/>
+  &lt;style type="text/css"&gt;.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}&lt;/style&gt;<br/>
+ &lt;/head&gt;<br/>
+ &lt;body class="fixed-navigation fixed-header smart-style  desktop-detected  pace-done pace-done"&gt;<br/>
+  &lt;div class="pace  pace-inactive pace-inactive"&gt;<br/>
+   &lt;div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(0%, 0px, 0px);"&gt;<br/>
+    &lt;div class="pace-progress-inner"&gt;&lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="pace-activity"&gt;&lt;/div&gt;<br/>
+  &lt;/div&gt;<br/>
+  &lt;div class="main"&gt;<br/>
+   &lt;div class="lad1"&gt;&lt;/div&gt;<br/>
+   &lt;div class="lad2"&gt;<br/>
+    &lt;div class="content-box"&gt;<br/>
+     &lt;div class="content-imagenens"&gt;&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/logoinei.png" class="img-responsive" style="margin: 0 auto; width:40%; padding-top: 1.5em; padding-bottom: 0.1em; padding-right: 1em;"&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="content-text"&gt;<br/>
+      &lt;h2&gt;ENCUESTA PERMANENTE DE EMPLEO NACIONAL&lt;br&gt;<br/>
+       SISTEMA DE MONITOREO Y SEGUIMIENTO DE PROCESOS&lt;/h2&gt;<br/>
+      &lt;form action="https://testing.inei.gob.pe/QA/epen/public/login" method="POST" id="login-form" class="smart-form client-form" novalidate&gt;&lt;input type="hidden" name="_token" value="e2uBFanG308U9qlUhcCfEGGrLcnC1FR9zOfYdl8Y"&gt;<br/>
+       &lt;fieldset&gt;<br/>
+        &lt;section class="form-group"&gt;&lt;label class="input"&gt; &lt;i class="icon-append fa fa-user"&gt;&lt;/i&gt; &lt;input type="text" name="user" value="" autofocus placeholder="Usuario"&gt; &lt;b class="tooltip tooltip-top-right"&gt;&lt;i class="fa fa-user txt-color-teal"&gt;&lt;/i&gt; Ingresar su usuario.&lt;/b&gt;&lt;/label&gt;<br/>
+        &lt;/section&gt;<br/>
+        &lt;section class="form-group"&gt;&lt;label class="input"&gt; &lt;i class="icon-append fa fa-lock"&gt;&lt;/i&gt; &lt;input type="password" name="password" placeholder="Contraseña"&gt; &lt;b class="tooltip tooltip-top-right"&gt;&lt;i class="fa fa-lock txt-color-teal"&gt;&lt;/i&gt; Ingresar su contraseña.&lt;/b&gt; &lt;/label&gt;<br/>
+        &lt;/section&gt;<br/>
+       &lt;/fieldset&gt;<br/>
+       &lt;section&gt;&lt;button type="submit" class="botons"&gt;INGRESAR &lt;i class="fa fa-arrow-circle-o-right"&gt;&lt;/i&gt;&lt;/button&gt;<br/>
+       &lt;/section&gt;<br/>
+      &lt;/form&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+  &lt;/div&gt;&lt;!-- Scripts --&gt; &lt;!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)--&gt;<br/>
+  &lt;script data-pace-options="{ &quot;restartOnRequestAfter&quot;: true }" src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/pace/pace.min.js"&gt;&lt;/script&gt;&lt;!-- Link to Google CDN's jQuery + jQueryUI; fall back to local --&gt;<br/>
+  &lt;script&gt;<br/>
+    if (!window.jQuery) {<br/>
+        document.write('&lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/libs/jquery-2.1.1.min.js"&gt;&lt;\/script&gt;');<br/>
+    }<br/>
+&lt;/script&gt;<br/>
+  &lt;script&gt;<br/>
+    $.ajaxSetup({<br/>
+        headers: {<br/>
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')<br/>
+        }<br/>
+    });<br/>
+&lt;/script&gt;<br/>
+  &lt;script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script&gt;<br/>
+    if (!window.jQuery.ui) {<br/>
+        document.write('&lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/libs/jquery-ui-1.10.3.min.js"&gt;&lt;\/script&gt;');<br/>
+    }<br/>
+&lt;/script&gt;<br/>
+  &lt;script&gt;<br/>
+        function muestra_oculta(id){<br/>
+            if (document.getElementById){<br/>
+                var el = document.getElementById(id);<br/>
+                el.style.display = (el.style.display == 'none') ? 'block' : 'none';<br/>
+            }<br/>
+        }<br/>
+        window.onload = function(){<br/>
+            muestra_oculta('contenido');<br/>
+<br/>
+        }<br/>
+&lt;/script&gt;&lt;!-- IMPORTANT: APP CONFIG --&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/app.config.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/min/smartadmin-plugins.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/app.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/app/util/util.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript"&gt;<br/>
+<br/>
+    $(document).ready(function() {<br/>
+        pageSetUp();<br/>
+        $('#modal-general').on('show.bs.modal', function(e){<br/>
+            var modal  = $(this);<br/>
+            var button = $(e.relatedTarget);// Button that triggered the modal<br/>
+            var link = button.data('link');<br/>
+<br/>
+            $.ajax({<br/>
+                type : 'get',<br/>
+                url : link,<br/>
+                beforeSend: function(){<br/>
+                    modal.find('.modal-body').html('&lt;img src="https://testing.inei.gob.pe/QA/epen/public/img/ajax-loader.gif" class="center-block"/&gt;');<br/>
+                },<br/>
+                success : function(result) {<br/>
+                    modal.find('.modal-body').html(result);<br/>
+                },<br/>
+                error: function(result, status) {<br/>
+                    alert('Error ' + status + ' al cargar la información, Intente nuevamente.')<br/>
+                }<br/>
+            });<br/>
+        })<br/>
+<br/>
+    })<br/>
+<br/>
+<br/>
+<br/>
+&lt;/script&gt;<br/>
+  &lt;style&gt;<br/>
+    .dataTable &gt; thead &gt; tr &gt; th[class*="sort"]::after{display: none}<br/>
+&lt;/style&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/highcharts/code/highcharts.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/highcharts/code/highcharts-3d.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/highcharts/code/highcharts-more.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/highcharts/code/exporting.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/fancybox/jquery.fancybox.pack.js?v=2.1.7"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatables/jquery.dataTables.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatables/dataTables.colVis.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatables/dataTables.tableTools.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatables/dataTables.bootstrap.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatable-responsive/datatables.responsive.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/datatable-responsive/datatables.responsive.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/jquery.dataTables.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/dataTables.buttons.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/buttons.flash.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/jszip.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/pdfmake.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/vfs_fonts.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/buttons.html5.min.js"&gt;&lt;/script&gt;&lt;!--NUEVO --&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/exportar/js/buttons.print.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/plugin/export.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://testing.inei.gob.pe/QA/epen/public/js/jquery.sumoselect.min.js"&gt;&lt;/script&gt;<br/>
+  &lt;script&gt;<br/>
+        window.dataLayer = window.dataLayer || [];<br/>
+        function gtag(){dataLayer.push(arguments);}<br/>
+        gtag('js', new Date());<br/>
+        gtag('config', 'UA-104380336-8');<br/>
+        /**/<br/>
+        function getURLParameter(name) {<br/>
+            return decodeURI((RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]);<br/>
+        }<br/>
+        function hideURLParams() {<br/>
+            var hide = ['menu_id_est'];<br/>
+            for(var h in hide) {<br/>
+                if(getURLParameter(h)) {<br/>
+                    history.replaceState(null, document.getElementsByTagName("title")[0].innerHTML, window.location.pathname);<br/>
+                }<br/>
+            }<br/>
+        }<br/>
+        window.onload=hideURLParams();<br/>
+    &lt;/script&gt;&lt;!--&lt;script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""&gt;&lt;/script&gt;--&gt;<br/>
+  &lt;div id="divSmallBoxes"&gt;&lt;/div&gt;<br/>
+  &lt;div id="divMiniIcons"&gt;&lt;/div&gt;<br/>
+  &lt;div id="divbigBoxes"&gt;&lt;/div&gt;<br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>
